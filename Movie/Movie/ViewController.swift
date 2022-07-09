@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
         for i in imageArray{
             i?.layer.cornerRadius = image1.frame.width / 2
-            i?.layer.borderWidth = 2
+            i?.layer.borderWidth = 1.5
             i?.layer.borderColor = UIColor.lightGray.cgColor
         }
     
