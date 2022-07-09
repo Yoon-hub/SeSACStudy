@@ -27,8 +27,6 @@ class ViewController: UIViewController {
         for i in buttonArr{
             desginButton(i)
         }
-        updateButton()
-        
     }
     
     func desginButton(_ button: UIButton){
@@ -55,8 +53,6 @@ class ViewController: UIViewController {
                 buttonArr[i].setTitle(buttonArr[i-1].currentTitle, for: .normal)
             }
         }
-        
-
     }
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
