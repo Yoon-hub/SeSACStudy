@@ -115,14 +115,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="eLZ-ax-6nE" firstAttribute="top" secondItem="TdB-r1-493" secondAttribute="top" constant="156" id="05J-WR-mZH"/>
-                                    <constraint firstItem="76g-7T-JXi" firstAttribute="top" secondItem="TdB-r1-493" secondAttribute="top" constant="20" symbolic="YES" id="3Hy-Q8-zKJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="76g-7T-JXi" secondAttribute="bottom" constant="20" symbolic="YES" id="C8O-hJ-HF6"/>
-                                    <constraint firstAttribute="bottom" secondItem="eLZ-ax-6nE" secondAttribute="bottom" constant="155" id="Me8-WU-MIz"/>
-                                    <constraint firstItem="eLZ-ax-6nE" firstAttribute="leading" secondItem="TdB-r1-493" secondAttribute="leading" constant="79" id="YbA-bt-jLA"/>
-                                    <constraint firstAttribute="trailing" secondItem="76g-7T-JXi" secondAttribute="trailing" id="iVC-1X-iYa"/>
-                                    <constraint firstItem="76g-7T-JXi" firstAttribute="leading" secondItem="TdB-r1-493" secondAttribute="leading" id="leh-Z8-G18"/>
-                                    <constraint firstAttribute="trailing" secondItem="eLZ-ax-6nE" secondAttribute="trailing" constant="78.5" id="sfC-A8-7jq"/>
+                                    <constraint firstAttribute="trailing" secondItem="76g-7T-JXi" secondAttribute="trailing" id="Eup-Y3-mqt"/>
+                                    <constraint firstItem="eLZ-ax-6nE" firstAttribute="leading" secondItem="TdB-r1-493" secondAttribute="leading" constant="79" id="F1M-UR-fB8"/>
+                                    <constraint firstAttribute="trailing" secondItem="eLZ-ax-6nE" secondAttribute="trailing" constant="78.5" id="MS0-9U-hQd"/>
+                                    <constraint firstItem="76g-7T-JXi" firstAttribute="leading" secondItem="TdB-r1-493" secondAttribute="leading" id="OgT-R1-iZc"/>
+                                    <constraint firstItem="76g-7T-JXi" firstAttribute="top" secondItem="TdB-r1-493" secondAttribute="top" constant="20" id="YjW-0Z-YNl"/>
+                                    <constraint firstItem="eLZ-ax-6nE" firstAttribute="top" secondItem="TdB-r1-493" secondAttribute="top" constant="156" id="ft9-8D-au1"/>
                                 </constraints>
                             </view>
                         </subviews>
