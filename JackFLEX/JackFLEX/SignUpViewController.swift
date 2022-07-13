@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var registButton: UIButton!
     @IBOutlet weak var mySwitch: UISwitch!
     
+    @IBOutlet weak var errLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,11 +48,16 @@ class SignUpViewController: UIViewController {
     @IBAction func registButtonClicked(_ sender: UIButton) {
         view.endEditing(true)
         if emailTextField.text == "" || passwdTextField.text == ""{
-            designTextField(textView: emailTextField, name: "이메일은 필수로 입력해야합니다.")
-            designTextField(textView: passwdTextField, name: "비밀번호는 필수로 입력해야합니다.", isSecure: true)
+            errLabel.text = "이메일 혹은 비밀번호는 필수로 입력하셔야 합니다."
         } else if passwdTextField.text!.count < 6{
-            designTextField(textView: passwdTextField, name: "비밀번호는 6자리 이상 이여야합니다.", isSecure: true)
+            errLabel.text = "비밀번호는 6자 이상 입력하셔야 합니다."
+        } else if Int(codeTextField.text!) ?? nil == nil{
+            errLabel.text = "추천코드는 숫자로만 입력하셔야 합니다."
+        } else{
+            errLabel.textColor = .blue
+            errLabel.text = "회원가입에 성공 하셨습니다람쥐"
         }
+        
         
     }
     

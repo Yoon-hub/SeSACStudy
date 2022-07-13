@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -88,6 +89,12 @@
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owW-DN-dgE">
+                                <rect key="frame" x="16" y="684" width="382" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,11 +106,14 @@
                             <constraint firstItem="Jdu-Br-7bU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="E64-AD-4hd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l94-uk-rcd" secondAttribute="trailing" constant="55" id="EVC-Jp-n7d"/>
                             <constraint firstItem="l94-uk-rcd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="Kdf-M6-jpD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="owW-DN-dgE" secondAttribute="trailing" constant="16" id="MEl-yx-JfY"/>
                             <constraint firstItem="JT3-tJ-AdJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="e5R-0a-XFA"/>
                             <constraint firstItem="VUz-es-ewy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="fQH-QP-Pwo"/>
                             <constraint firstItem="VUz-es-ewy" firstAttribute="top" secondItem="l94-uk-rcd" secondAttribute="bottom" constant="30.5" id="foq-aS-uC4"/>
                             <constraint firstItem="l94-uk-rcd" firstAttribute="top" secondItem="JT3-tJ-AdJ" secondAttribute="bottom" constant="130" id="jeq-Kp-zTa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jdu-Br-7bU" secondAttribute="trailing" constant="66.5" id="l9y-CE-Oqb"/>
+                            <constraint firstItem="owW-DN-dgE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lk6-0N-daG"/>
+                            <constraint firstItem="owW-DN-dgE" firstAttribute="top" secondItem="Jdu-Br-7bU" secondAttribute="bottom" constant="27" id="mnH-r9-x91"/>
                             <constraint firstItem="JT3-tJ-AdJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="p40-gk-cpR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JT3-tJ-AdJ" secondAttribute="trailing" constant="123" id="p6J-v6-zPK"/>
                             <constraint firstItem="Jdu-Br-7bU" firstAttribute="top" secondItem="VUz-es-ewy" secondAttribute="bottom" constant="34" id="qc1-OF-D1G"/>
@@ -115,6 +125,7 @@
                     <connections>
                         <outlet property="codeTextField" destination="9zk-95-VpO" id="y2G-rj-rSd"/>
                         <outlet property="emailTextField" destination="zzr-Go-ItU" id="1BU-ja-vwN"/>
+                        <outlet property="errLabel" destination="owW-DN-dgE" id="Swg-Gx-bDJ"/>
                         <outlet property="locationTextField" destination="ZXG-5c-4lb" id="Ypd-3f-PcW"/>
                         <outlet property="mySwitch" destination="54q-LT-Vtm" id="6BX-C0-Cei"/>
                         <outlet property="nicknameTextField" destination="Hgy-Rp-aiv" id="UtB-fN-bwR"/>
@@ -132,4 +143,9 @@
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
