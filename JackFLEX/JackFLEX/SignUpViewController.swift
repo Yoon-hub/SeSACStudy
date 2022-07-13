@@ -22,11 +22,11 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        designTextField(textView: emailTextField, name: "이메일 주소 또는 전화번호", isSecure: false)
+        designTextField(textView: emailTextField, name: "이메일 주소 또는 전화번호")
         designTextField(textView: passwdTextField, name: "비밀번호", isSecure: true)
-        designTextField(textView: locationTextField, name: "위치", isSecure: false)
-        designTextField(textView: nicknameTextField, name: "닉네임", isSecure: false)
-        designTextField(textView: codeTextField, name: "추천 코드 입력", isSecure: false)
+        designTextField(textView: locationTextField, name: "위치")
+        designTextField(textView: nicknameTextField, name: "닉네임")
+        designTextField(textView: codeTextField, name: "추천 코드 입력")
         
         registButton.setTitle("회원가입", for: .highlighted)
         registButton.setTitleColor(.black, for: .normal)
@@ -46,9 +46,16 @@ class SignUpViewController: UIViewController {
     
     @IBAction func registButtonClicked(_ sender: UIButton) {
         view.endEditing(true)
+        if emailTextField.text == "" || passwdTextField.text == ""{
+            designTextField(textView: emailTextField, name: "이메일은 필수로 입력해야합니다.")
+            designTextField(textView: passwdTextField, name: "비밀번호는 필수로 입력해야합니다.", isSecure: true)
+        } else if passwdTextField.text!.count < 6{
+            designTextField(textView: passwdTextField, name: "비밀번호는 6자리 이상 이여야합니다.", isSecure: true)
+        }
+        
     }
     
-    func designTextField( textView: UITextField, name: String, isSecure: Bool){
+    func designTextField( textView: UITextField, name: String, isSecure: Bool = false){
         textView.attributedPlaceholder = NSAttributedString(string: name, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         textView.textAlignment = .center
         textView.textColor = .white
