@@ -16,36 +16,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    let format = DateFormatter()
+   
+
+
+    
     var labelArr : [UILabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        format.locale = Locale(identifier: "ko_KR")  // 한국시간으로 변경
+        format.timeZone = TimeZone(abbreviation: "KST") // 한국시간으로 변경
+        format.dateFormat = "yyyy년\n MM월 d일"
+        if let selectDate = UserDefaults.standard.string(forKey: "selectDate"){
+            datePicker.date = format.date(from: selectDate)!
+        }
+        
         for i in imageCollection{
             i.layer.cornerRadius = 25
         }
         updateDate()
-        
-    
-        
-        
-        
-        //DateFormatter: 알아보기 쉬운 날짜 + 시간대 (yyyy MM dd hh:mm:ss)
-//        let format = DateFormatter()
-//        format.dateFormat = "M월 d일, yy년"  // format을 이형태로 하겠다
-//
-//        let result = format.string(from: Date())
-//
-//        let word = "3월 2일, 19년"
-//        let dateResult = format.date(from: word)
+
     }
     
     func updateDate() {
         
-        let format = DateFormatter()
-        format.locale = Locale(identifier: "ko_KR")  // 한국시간으로 변경
-        format.timeZone = TimeZone(abbreviation: "KST") // 한국시간으로 변경
-        format.dateFormat = "yyyy년\n MM월 d일"
+        UserDefaults.standard.set(format.string(from: datePicker.date), forKey: "selectDate") // userDefault로 저장
         
         let today = datePicker.date
         let day100 = today.addingTimeInterval(86400 * 100)
