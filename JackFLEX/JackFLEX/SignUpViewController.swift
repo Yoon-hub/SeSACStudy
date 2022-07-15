@@ -47,15 +47,20 @@ class SignUpViewController: UIViewController {
     
     @IBAction func registButtonClicked(_ sender: UIButton) {
         view.endEditing(true)
+        
         if emailTextField.text == "" || passwdTextField.text == ""{
-            errLabel.text = "이메일 혹은 비밀번호는 필수로 입력하셔야 합니다."
+            let errorMessage = "이메일 혹은 비밀번호는 필수로 입력하셔야 합니다."
+            errorMessageController(errorMsg: errorMessage)
         } else if passwdTextField.text!.count < 6{
-            errLabel.text = "비밀번호는 6자 이상 입력하셔야 합니다."
+            let errorMessage = "비밀번호는 6자 이상 입력하셔야 합니다."
+            errorMessageController(errorMsg: errorMessage)
         } else if Int(codeTextField.text!) ?? nil == nil{
-            errLabel.text = "추천코드는 숫자로만 입력하셔야 합니다."
+            let errorMessage = "추천코드는 숫자로만 입력하셔야 합니다."
+            errorMessageController(errorMsg: errorMessage)
         } else{
             errLabel.textColor = .blue
             errLabel.text = "회원가입에 성공 하셨습니다람쥐"
+            performSegue(withIdentifier: "ToMovie", sender: nil)
         }
         
         
@@ -69,6 +74,18 @@ class SignUpViewController: UIViewController {
         textView.isSecureTextEntry = isSecure
         textView.borderStyle = .roundedRect
         textView.backgroundColor = .darkGray
+    }
+    
+    func showAlert(title: String){
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .destructive, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func errorMessageController(errorMsg: String){
+        errLabel.text = errorMsg
+        showAlert(title: errorMsg)
     }
     
 }
