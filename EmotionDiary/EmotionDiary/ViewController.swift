@@ -6,7 +6,7 @@
 //
 
 import UIKit
-enum Emotion: String{
+enum Emotion: String {
     case happy = "Happy"
     case sad = "Sad"
     case love = "Love"
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gloomyLabel: UILabel!
     @IBOutlet weak var upsetLabel: UILabel!
     @IBOutlet weak var panicLabel: UILabel!
+    @IBOutlet var buttonCollection: [UIButton]!
     
     var dic : [String: Int] = ["Happy": 0, "Love" : 0, "Like" : 0, "Panic" : 0, "Upset" : 0, "Gloomy": 0, "Bored" : 0, "Uncomfortable" : 0, "Sad" : 0]
     
@@ -40,44 +41,36 @@ class ViewController: UIViewController {
     @IBAction func buttonClicked(_ sender: UIButton) {
         
         dic[sender.currentTitle!]! += 1
-        
-        if sender.currentTitle! == Emotion.happy.rawValue{
+        updateLabel(sender)
+    }
+    
+    
+    func updateLabel(_ button: UIButton){
+        if button.currentTitle! == Emotion.happy.rawValue{
             happyLabel.text = "행복해 \(dic["Happy"]!)"
-        } else if sender.currentTitle! == Emotion.sad.rawValue{
+        } else if button.currentTitle! == Emotion.sad.rawValue{
             sadLabel.text = "슬퍼해 \(dic["Sad"]!)"
-        } else if sender.currentTitle! == Emotion.love.rawValue{
+        } else if button.currentTitle! == Emotion.love.rawValue{
             loveLabel.text = "사랑해 \(dic["Love"]!)"
-        } else if sender.currentTitle! == Emotion.like.rawValue{
+        } else if button.currentTitle! == Emotion.like.rawValue{
             likeLabel.text = "좋아해 \(dic["Like"]!)"
-        } else if sender.currentTitle! == Emotion.uncomfortable.rawValue{
+        } else if button.currentTitle! == Emotion.uncomfortable.rawValue{
             uncomfortableLabel.text = "불편해 \(dic["Uncomfortable"]!)"
-        }else if sender.currentTitle! == Emotion.bored.rawValue{
+        }else if button.currentTitle! == Emotion.bored.rawValue{
             boredLabel.text = "심심해 \(dic["Bored"]!)"
-        } else if sender.currentTitle! == Emotion.upset.rawValue{
+        } else if button.currentTitle! == Emotion.upset.rawValue{
             upsetLabel.text = "속상해 \(dic["Upset"]!)"
-        }else if sender.currentTitle! == Emotion.panic.rawValue{
+        }else if button.currentTitle! == Emotion.panic.rawValue{
             panicLabel.text = "당황해 \(dic["Panic"]!)"
-        }else if sender.currentTitle! == Emotion.gloomy.rawValue{
+        }else if button.currentTitle! == Emotion.gloomy.rawValue{
             gloomyLabel.text = "우울해 \(dic["Gloomy"]!)"
         }
-        
-        
-        
-     //   updateLabel()
-        
     }
-//    func updateLabel(){
-//        happyLabel.text = "행복해 \(dic["Happy"]!)"
-//        sadLabel.text = "슬퍼해 \(dic["Sad"]!)"
-//        likeLabel.text = "좋아해 \(dic["Like"]!)"
-//        loveLabel.text = "사랑해 \(dic["Love"]!)"
-//        uncomfortableLabel.text = "불편해 \(dic["Uncomfortable"]!)"
-//        boredLabel.text = "심심해 \(dic["Bored"]!)"
-//        gloomyLabel.text = "우울해 \(dic["Gloomy"]!)"
-//        upsetLabel.text = "속상해 \(dic["Upset"]!)"
-//        panicLabel.text = "당황해 \(dic["Panic"]!)"
-//    }
     
-
+    @IBAction func resetButton(_ sender: UIButton) {
+        dic.forEach{ dic[$0.key] = 0 }
+        buttonCollection.forEach{updateLabel($0)}
+    }
+    
 }
 
