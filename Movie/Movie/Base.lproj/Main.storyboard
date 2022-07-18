@@ -33,8 +33,11 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsW-lc-oZQ">
-                                        <rect key="frame" x="41" y="34" width="104.5" height="33"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsW-lc-oZQ">
+                                        <rect key="frame" x="41" y="30.5" width="115.5" height="36.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bsW-lc-oZQ" secondAttribute="height" multiplier="104:33" id="8l2-eL-fjt"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="TV 프로그램">
@@ -42,8 +45,11 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbb-B9-dir">
-                                        <rect key="frame" x="145.5" y="34" width="112.5" height="33"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbb-B9-dir">
+                                        <rect key="frame" x="156.5" y="33" width="115" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qbb-B9-dir" secondAttribute="height" multiplier="112:33" id="baf-XB-hQL"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="영화">
@@ -51,8 +57,11 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYW-uH-XuT">
-                                        <rect key="frame" x="258" y="34" width="129" height="33"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYW-uH-XuT">
+                                        <rect key="frame" x="271.5" y="37.5" width="115.5" height="29.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="OYW-uH-XuT" secondAttribute="height" multiplier="43:11" id="OZ3-bJ-62C"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="내가 찜한 콘텐츠">
@@ -61,6 +70,10 @@
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="qbb-B9-dir" firstAttribute="width" secondItem="bsW-lc-oZQ" secondAttribute="width" id="rVf-hC-nzB"/>
+                                    <constraint firstItem="OYW-uH-XuT" firstAttribute="width" secondItem="bsW-lc-oZQ" secondAttribute="width" id="rgD-eE-cD9"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="ess-Xf-19R">
                                 <rect key="frame" x="13" y="657" width="388" height="50.5"/>
@@ -104,8 +117,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="미리보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeE-wI-olb">
-                                <rect key="frame" x="20" y="715" width="80" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미리보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeE-wI-olb">
+                                <rect key="frame" x="20" y="715" width="66" height="23"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -138,6 +151,7 @@
                             <constraint firstItem="R05-l7-3d0" firstAttribute="top" secondItem="aeE-wI-olb" secondAttribute="bottom" constant="13" id="Jbh-h3-R6e"/>
                             <constraint firstItem="7xE-0f-81O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="PGo-qn-8hW"/>
                             <constraint firstAttribute="trailing" secondItem="R05-l7-3d0" secondAttribute="trailing" constant="10" id="RAH-UW-2ND"/>
+                            <constraint firstItem="aeE-wI-olb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S2W-eD-Tra"/>
                             <constraint firstItem="7xE-0f-81O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="dRS-nn-GeH"/>
                             <constraint firstItem="aeE-wI-olb" firstAttribute="top" secondItem="ess-Xf-19R" secondAttribute="bottom" constant="7.5" id="jqj-Z4-WOG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7xE-0f-81O" secondAttribute="trailing" constant="14" id="t5n-BL-HW8"/>
@@ -152,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
+            <point key="canvasLocation" x="99" y="65"/>
         </scene>
     </scenes>
     <resources>
