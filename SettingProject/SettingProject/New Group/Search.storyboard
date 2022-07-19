@@ -1,53 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G85-et-ta1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1BO-r2-bP4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--타이틀 이름-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Search Table View Controller-->
+        <scene sceneID="ac6-xZ-AMP">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SearchViewController" customModule="SettingProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <tableViewController id="RYL-bz-KEr" customClass="SearchTableViewController" customModule="SettingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0lF-o5-gcs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="타이틀 이름" id="uzK-0R-Ajn">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="EhM-L2-2fx"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="125" id="R8Z-oi-NSh" customClass="SearchTableViewCell" customModule="SettingProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="125"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R8Z-oi-NSh" id="F44-qD-58F">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie1" translatesAutoresizingMaskIntoConstraints="NO" id="l80-1N-exr">
+                                            <rect key="frame" x="5" y="5" width="99.5" height="115"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이언맨( Iron Man)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9U-nP-0lU">
+                                            <rect key="frame" x="109.5" y="5" width="299.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2008.4.30 | EN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozg-nm-vMv">
+                                            <rect key="frame" x="109.5" y="31" width="299.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMe-w5-2ni">
+                                            <rect key="frame" x="109.5" y="54" width="299.5" height="57.5"/>
+                                            <string key="text"> 마블 코믹스의 캐릭터 아이언맨을 원작으로 하여 만들어진 슈퍼히어로 액션 영화이다. 마블 시네마틱 유니버스를 기반으로 한 첫 영화이자 마블 스튜디오에서 제작한 첫 번째 영화다. 감독은 존 패브로이다. 억만장자 사업가이자 천재 공학자인 토니 스타크가 아이언맨이라 불리는 무장 슈트를 만들어 평화를 지키기 위해 노력하는 이야기이다.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="uMe-w5-2ni" secondAttribute="trailing" constant="5" id="2xb-FT-g8A"/>
+                                        <constraint firstItem="Ozg-nm-vMv" firstAttribute="leading" secondItem="l80-1N-exr" secondAttribute="trailing" constant="5" id="420-2N-MeK"/>
+                                        <constraint firstAttribute="trailing" secondItem="h9U-nP-0lU" secondAttribute="trailing" constant="5" id="9q3-lY-esy"/>
+                                        <constraint firstItem="h9U-nP-0lU" firstAttribute="leading" secondItem="l80-1N-exr" secondAttribute="trailing" constant="5" id="EcI-Ji-avG"/>
+                                        <constraint firstItem="l80-1N-exr" firstAttribute="leading" secondItem="F44-qD-58F" secondAttribute="leading" constant="5" id="GTw-GW-Dv9"/>
+                                        <constraint firstItem="uMe-w5-2ni" firstAttribute="top" secondItem="Ozg-nm-vMv" secondAttribute="bottom" constant="5" id="Giy-xx-abc"/>
+                                        <constraint firstItem="h9U-nP-0lU" firstAttribute="top" secondItem="F44-qD-58F" secondAttribute="top" constant="5" id="Pba-19-1hh"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ozg-nm-vMv" secondAttribute="trailing" constant="5" id="Qqi-ux-fNV"/>
+                                        <constraint firstItem="l80-1N-exr" firstAttribute="top" secondItem="F44-qD-58F" secondAttribute="top" constant="5" id="d3d-lh-LNr"/>
+                                        <constraint firstItem="Ozg-nm-vMv" firstAttribute="top" secondItem="h9U-nP-0lU" secondAttribute="bottom" constant="5" id="ksr-UT-aVy"/>
+                                        <constraint firstItem="uMe-w5-2ni" firstAttribute="leading" secondItem="l80-1N-exr" secondAttribute="trailing" constant="5" id="pau-zU-A43"/>
+                                        <constraint firstItem="l80-1N-exr" firstAttribute="width" secondItem="F44-qD-58F" secondAttribute="width" multiplier="0.24" id="sTc-1X-Cc8"/>
+                                        <constraint firstAttribute="bottom" secondItem="l80-1N-exr" secondAttribute="bottom" constant="5" id="t01-TG-DmI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Ozg-nm-vMv" id="3r1-OL-spG"/>
+                                    <outlet property="movieImageVIew" destination="l80-1N-exr" id="2pr-Am-u6P"/>
+                                    <outlet property="movieSummaryLabel" destination="uMe-w5-2ni" id="2pj-9W-m1e"/>
+                                    <outlet property="movieTitleLabel" destination="h9U-nP-0lU" id="pmS-u0-hVF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RYL-bz-KEr" id="JEn-Jn-nkA"/>
+                            <outlet property="delegate" destination="RYL-bz-KEr" id="5uH-0T-GeG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4uZ-09-nLC">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="xmark" catalog="system" id="1cf-mD-Meq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="JS4-yo-N3x">
+                            <rect key="frame" x="59" y="5" width="306" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbF-df-2wk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="75.669642857142847"/>
+            <point key="canvasLocation" x="692.75362318840587" y="-438.61607142857139"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="9a9-Od-PAb">
+        <scene sceneID="kYj-x5-v49">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G85-et-ta1" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bP-b3-h4L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1BO-r2-bP4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SDt-yc-JWo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9qb-BJ-tJY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="8Gq-NH-qIq"/>
+                        <segue destination="RYL-bz-KEr" kind="relationship" relationship="rootViewController" id="b3N-02-55M"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NeY-Iu-SOM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="76"/>
+            <point key="canvasLocation" x="-217.39130434782609" y="-438.61607142857139"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="movie1" width="1978" height="2835"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

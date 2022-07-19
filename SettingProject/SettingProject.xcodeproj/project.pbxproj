@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6766860A28864544006690E7 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766860928864544006690E7 /* UIViewController+extension.swift */; };
-		6766860C28864556006690E7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766860B28864556006690E7 /* SearchViewController.swift */; };
 		6766860E28864591006690E7 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766860D28864591006690E7 /* TrendViewController.swift */; };
 		676686122886479A006690E7 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676686112886479A006690E7 /* UITextField+Extension.swift */; };
 		6766861428864B98006690E7 /* BucketlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766861328864B98006690E7 /* BucketlistTableViewController.swift */; };
@@ -16,6 +15,8 @@
 		6766861A288696FE006690E7 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67668619288696FE006690E7 /* ShoppingTableViewController.swift */; };
 		6766861C28869714006690E7 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6766861B28869714006690E7 /* Shopping.storyboard */; };
 		676686202886A097006690E7 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766861F2886A097006690E7 /* ShoppingTableViewCell.swift */; };
+		67668622288718A2006690E7 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67668621288718A2006690E7 /* SearchTableViewController.swift */; };
+		67668624288718B3006690E7 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67668623288718B3006690E7 /* SearchTableViewCell.swift */; };
 		67CD873028851DDD008FC5D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD872F28851DDD008FC5D5 /* AppDelegate.swift */; };
 		67CD873228851DDD008FC5D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD873128851DDD008FC5D5 /* SceneDelegate.swift */; };
 		67CD873928851DDE008FC5D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67CD873828851DDE008FC5D5 /* Assets.xcassets */; };
@@ -30,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		6766860928864544006690E7 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
-		6766860B28864556006690E7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6766860D28864591006690E7 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		676686112886479A006690E7 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		6766861328864B98006690E7 /* BucketlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		67668619288696FE006690E7 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		6766861B28869714006690E7 /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
 		6766861F2886A097006690E7 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		67668621288718A2006690E7 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		67668623288718B3006690E7 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		67CD872C28851DDD008FC5D5 /* SettingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CD872F28851DDD008FC5D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67CD873128851DDD008FC5D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +70,8 @@
 			children = (
 				67CD874328851E03008FC5D5 /* Setting.storyboard */,
 				67CD874928864029008FC5D5 /* Search.storyboard */,
-				6766860B28864556006690E7 /* SearchViewController.swift */,
+				67668621288718A2006690E7 /* SearchTableViewController.swift */,
+				67668623288718B3006690E7 /* SearchTableViewCell.swift */,
 				67CD874B28864045008FC5D5 /* Trend.storyboard */,
 				6766861528864D99006690E7 /* BucketlistTableViewCell.swift */,
 				67668619288696FE006690E7 /* ShoppingTableViewController.swift */,
@@ -190,7 +193,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6766860C28864556006690E7 /* SearchViewController.swift in Sources */,
 				6766860A28864544006690E7 /* UIViewController+extension.swift in Sources */,
 				676686122886479A006690E7 /* UITextField+Extension.swift in Sources */,
 				6766861A288696FE006690E7 /* ShoppingTableViewController.swift in Sources */,
@@ -199,6 +201,8 @@
 				6766861628864D99006690E7 /* BucketlistTableViewCell.swift in Sources */,
 				67CD87482885657D008FC5D5 /* TableViewController.swift in Sources */,
 				6766860E28864591006690E7 /* TrendViewController.swift in Sources */,
+				67668622288718A2006690E7 /* SearchTableViewController.swift in Sources */,
+				67668624288718B3006690E7 /* SearchTableViewCell.swift in Sources */,
 				67CD873228851DDD008FC5D5 /* SceneDelegate.swift in Sources */,
 				6766861428864B98006690E7 /* BucketlistTableViewController.swift in Sources */,
 			);
