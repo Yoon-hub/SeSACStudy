@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gMU-b9-z4p">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shopping Table View Controller-->
+        <scene sceneID="3ZC-84-CmT">
+            <objects>
+                <tableViewController id="gMU-b9-z4p" customClass="ShoppingTableViewController" customModule="SettingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Mla-g9-P3W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="JOS-ba-S8S">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쇼핑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZH-UH-fen">
+                                    <rect key="frame" x="192" y="10" width="30" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-HY-hLi">
+                                    <rect key="frame" x="8" y="47" width="398" height="70"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="70" id="kIA-8v-uNv"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hj7-Cw-jWv">
+                                    <rect key="frame" x="349.5" y="66.5" width="48.5" height="31"/>
+                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="jZH-UH-fen" firstAttribute="top" secondItem="JOS-ba-S8S" secondAttribute="top" constant="10" id="2FQ-Pc-2HB"/>
+                                <constraint firstAttribute="trailing" secondItem="Xir-HY-hLi" secondAttribute="trailing" constant="8" id="K09-zc-ykJ"/>
+                                <constraint firstItem="Xir-HY-hLi" firstAttribute="top" secondItem="jZH-UH-fen" secondAttribute="bottom" constant="16" id="MUz-Gm-nOe"/>
+                                <constraint firstAttribute="trailing" secondItem="Hj7-Cw-jWv" secondAttribute="trailing" constant="16" id="Yps-EO-B2n"/>
+                                <constraint firstItem="Xir-HY-hLi" firstAttribute="leading" secondItem="JOS-ba-S8S" secondAttribute="leading" constant="8" id="hbG-gz-eMe"/>
+                                <constraint firstItem="jZH-UH-fen" firstAttribute="centerX" secondItem="JOS-ba-S8S" secondAttribute="centerX" id="nQ0-0K-swo"/>
+                                <constraint firstItem="Hj7-Cw-jWv" firstAttribute="centerY" secondItem="Xir-HY-hLi" secondAttribute="centerY" id="tn5-rK-rmb"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="loF-Te-eRU">
+                                <rect key="frame" x="20" y="137.5" width="374" height="74"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="loF-Te-eRU" id="KUC-My-tAU">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ht7-ib-mA7">
+                                            <rect key="frame" x="20" y="21" width="19.5" height="31.5"/>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SCx-WB-8tl">
+                                            <rect key="frame" x="332" y="19.5" width="22" height="34"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그립톡 구매하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgV-qa-dFH">
+                                            <rect key="frame" x="59.5" y="26.5" width="107.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ht7-ib-mA7" firstAttribute="leading" secondItem="KUC-My-tAU" secondAttribute="leading" constant="20" id="8BT-ww-ymi"/>
+                                        <constraint firstAttribute="trailing" secondItem="SCx-WB-8tl" secondAttribute="trailing" constant="20" id="FST-1L-FpC"/>
+                                        <constraint firstItem="SCx-WB-8tl" firstAttribute="top" secondItem="KUC-My-tAU" secondAttribute="top" constant="20" id="G0O-9j-kjD"/>
+                                        <constraint firstItem="SCx-WB-8tl" firstAttribute="centerY" secondItem="KUC-My-tAU" secondAttribute="centerY" id="MWv-ad-S8L"/>
+                                        <constraint firstItem="ht7-ib-mA7" firstAttribute="centerY" secondItem="KUC-My-tAU" secondAttribute="centerY" id="aV9-dR-UGw"/>
+                                        <constraint firstItem="wgV-qa-dFH" firstAttribute="centerY" secondItem="KUC-My-tAU" secondAttribute="centerY" id="ge4-LD-q0w"/>
+                                        <constraint firstItem="wgV-qa-dFH" firstAttribute="leading" secondItem="ht7-ib-mA7" secondAttribute="trailing" constant="20" id="hri-UV-gC7"/>
+                                        <constraint firstItem="ht7-ib-mA7" firstAttribute="top" secondItem="KUC-My-tAU" secondAttribute="top" constant="20" id="q3o-GW-CJF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gMU-b9-z4p" id="JOD-HY-UBF"/>
+                            <outlet property="delegate" destination="gMU-b9-z4p" id="cuC-f6-iW6"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="addButton" destination="Hj7-Cw-jWv" id="SAL-GY-PBU"/>
+                        <outlet property="searchTextField" destination="Xir-HY-hLi" id="uJ6-YR-ygS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAU-bB-euF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33.333333333333336" y="-5.3571428571428568"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
