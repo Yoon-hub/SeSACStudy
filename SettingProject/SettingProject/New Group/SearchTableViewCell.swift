@@ -15,4 +15,10 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var movieSummaryLabel: UILabel!
     
+    func configureCell(data: Movie){
+        movieTitleLabel.text = data.title
+        movieSummaryLabel.text = data.overview
+        dateLabel.text = data.overview
+    }
+    
 }
