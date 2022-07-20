@@ -66,17 +66,41 @@
 			children = (
 				67F80DC72887FD6A00BE5D4C /* AppDelegate.swift */,
 				67F80DC92887FD6A00BE5D4C /* SceneDelegate.swift */,
-				67F80DCD2887FD6A00BE5D4C /* Main.storyboard */,
-				67F80DE1288806AE00BE5D4C /* BookCollectionViewController.swift */,
-				67F80DE32888122000BE5D4C /* UIColor+Extension.swift */,
-				67F80DDB2887FFB600BE5D4C /* BookCollectionViewCell.swift */,
-				67F80DDD2888020900BE5D4C /* Book.swift */,
-				67F80DDF2888025400BE5D4C /* BookInfo.swift */,
+				67F80DE7288816B900BE5D4C /* View */,
+				67F80DE52888167F00BE5D4C /* Controller */,
+				67F80DE62888169A00BE5D4C /* Model */,
 				67F80DD02887FD6B00BE5D4C /* Assets.xcassets */,
 				67F80DD22887FD6B00BE5D4C /* LaunchScreen.storyboard */,
 				67F80DD52887FD6B00BE5D4C /* Info.plist */,
 			);
 			path = Book;
+			sourceTree = "<group>";
+		};
+		67F80DE52888167F00BE5D4C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67F80DDB2887FFB600BE5D4C /* BookCollectionViewCell.swift */,
+				67F80DE1288806AE00BE5D4C /* BookCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67F80DE62888169A00BE5D4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67F80DE32888122000BE5D4C /* UIColor+Extension.swift */,
+				67F80DDD2888020900BE5D4C /* Book.swift */,
+				67F80DDF2888025400BE5D4C /* BookInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67F80DE7288816B900BE5D4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67F80DCD2887FD6A00BE5D4C /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
