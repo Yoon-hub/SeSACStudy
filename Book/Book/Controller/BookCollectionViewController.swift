@@ -15,18 +15,21 @@ class BookCollectionViewController: UICollectionViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layout =  UICollectionViewFlowLayout()
-        let spacing : CGFloat = 8
-        let width = UIScreen.main.bounds.width - (spacing * 3)
-        layout.itemSize = CGSize(width: width / 2, height: width / 2)
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-        collectionView.collectionViewLayout = layout
-        
+        layoutDesgin()
+        navigationItem.rightBarButtonItem = .init(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButton) )
+        navigationItem.rightBarButtonItem?.tintColor = .black
 
     }
+    @objc func searchButton(){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        
+        self.present(navi, animated: true)
+        
+    }
+     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return book.bookList.count
     }
@@ -39,7 +42,23 @@ class BookCollectionViewController: UICollectionViewController {
         return cell
     }
     	
+    func layoutDesgin(){
+        let layout =  UICollectionViewFlowLayout()
+        let spacing : CGFloat = 8
+        let width = UIScreen.main.bounds.width - (spacing * 3)
+        layout.itemSize = CGSize(width: width / 2, height: width / 2)
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        collectionView.collectionViewLayout = layout
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
+    }
 
 
 
+    
 }

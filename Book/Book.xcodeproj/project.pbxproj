@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67CBF4AD2889972D003177E9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CBF4AC2889972D003177E9 /* SearchViewController.swift */; };
+		67CBF4AF28899A96003177E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CBF4AE28899A96003177E9 /* DetailViewController.swift */; };
 		67F80DC82887FD6A00BE5D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F80DC72887FD6A00BE5D4C /* AppDelegate.swift */; };
 		67F80DCA2887FD6A00BE5D4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F80DC92887FD6A00BE5D4C /* SceneDelegate.swift */; };
 		67F80DCF2887FD6A00BE5D4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F80DCD2887FD6A00BE5D4C /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67CBF4AC2889972D003177E9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		67CBF4AE28899A96003177E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		67F80DC42887FD6A00BE5D4C /* Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Book.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F80DC72887FD6A00BE5D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F80DC92887FD6A00BE5D4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			children = (
 				67F80DDB2887FFB600BE5D4C /* BookCollectionViewCell.swift */,
 				67F80DE1288806AE00BE5D4C /* BookCollectionViewController.swift */,
+				67CBF4AC2889972D003177E9 /* SearchViewController.swift */,
+				67CBF4AE28899A96003177E9 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,8 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CBF4AF28899A96003177E9 /* DetailViewController.swift in Sources */,
 				67F80DE42888122100BE5D4C /* UIColor+Extension.swift in Sources */,
 				67F80DE02888025400BE5D4C /* BookInfo.swift in Sources */,
+				67CBF4AD2889972D003177E9 /* SearchViewController.swift in Sources */,
 				67F80DDE2888020900BE5D4C /* Book.swift in Sources */,
 				67F80DDC2887FFB600BE5D4C /* BookCollectionViewCell.swift in Sources */,
 				67F80DC82887FD6A00BE5D4C /* AppDelegate.swift in Sources */,
@@ -342,7 +350,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Book;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Book.yon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -372,7 +380,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Book;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Book.yon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
