@@ -9,6 +9,8 @@ import UIKit
 
 class BucketlistTableViewController: UITableViewController {
     
+    static let identifier = "BucketlistTableViewController"
+    
     var list = ["범죄도시2", "탑건", "토르"]
 
     @IBOutlet weak var userTextField: UITextField!
@@ -16,15 +18,33 @@ class BucketlistTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "버킷리스트"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        
         list.append("마녀2")
         list.append("놈놈놈")
         
     }
+    @objc func closeButtonClicked(){
+        self.dismiss(animated: true)
+    }
     @IBAction func userTextFieldReturn(_ sender: UITextField) {
-        list.append(sender.text!)
+        
+        if let value = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty, (2...6).contains(value.count){
+            list.append(value)
+            tableView.reloadData()
+        } else {
+            //토스트 메시지 띄우기
+        }
+        
+        guard let value = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty, (2...6).contains(value.count) else {
+            return
+        }
+        list.append(value)
+        tableView.reloadData()
         
         //중요
-        tableView.reloadData()
+        //tableView.reloadData()
         
        // tableView.reloadSections(<#T##sections: IndexSet##IndexSet#>, with: <#T##UITableView.RowAnimation#>) section 하나만 갱신
         //tableView.reloadRows(at: [IndexPath(row: 1, section: 1)], with: <#T##UITableView.RowAnimation#>) //cell 하나만 갱신
