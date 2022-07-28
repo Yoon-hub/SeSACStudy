@@ -3,11 +3,37 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="dpw-Qm-8ol">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="Vki-J2-szY" customClass="ViewController" customModule="SettingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iW5-gv-37p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="환영합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXT-N8-GRw">
+                                <rect key="frame" x="213" y="367" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6k2-gF-UZb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Phk-61-uMb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UmH-Xo-LiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2326.0869565217395" y="-637.5"/>
+        </scene>
         <!--Bucketlist Table View Controller-->
         <scene sceneID="8xn-UV-4D7">
             <objects>
@@ -52,7 +78,7 @@
                                                 <constraint firstAttribute="height" constant="44" id="zY4-ep-f9c"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="checkmark.seal.fill" catalog="system"/>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g84-4i-Jgs">
                                             <rect key="frame" x="80" y="18" width="314" height="44"/>
@@ -99,7 +125,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" id="Q7C-RS-vJF"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="userTextField" destination="OPs-o7-s1R" id="ywC-MM-Qwn"/>
+                        <outlet property="userTextField" destination="OPs-o7-s1R" id="FbY-cJ-tSs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihj-Ex-TzE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -218,7 +244,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJr-Av-G29" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3536.2318840579715" y="85.714285714285708"/>
+            <point key="canvasLocation" x="3549" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mBI-Yw-6ew">
@@ -238,8 +264,27 @@
             </objects>
             <point key="canvasLocation" x="844.92753623188412" y="75.669642857142847"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dQD-Nx-SS5">
+            <objects>
+                <navigationController storyboardIdentifier="UINavi" automaticallyAdjustsScrollViewInsets="NO" id="mYS-S8-6s2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Emv-3I-F7v">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vki-J2-szY" kind="relationship" relationship="rootViewController" id="F3U-sW-0pH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KwA-k4-fAH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415.9420289855072" y="-637.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

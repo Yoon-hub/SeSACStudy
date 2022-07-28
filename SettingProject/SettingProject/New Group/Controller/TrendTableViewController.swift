@@ -14,8 +14,6 @@ class TrendTableViewController: UITableViewController {
 
     }
 
-
-
     @IBAction func movieButtonClicked(_ sender: UIButton) {
         
         //영화 버튼을 클릭하면 > BucketListTableViewController Present 형식으로
@@ -27,6 +25,8 @@ class TrendTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Trend", bundle: nil)
         //2
         let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
+        //2.5
+        vc.textfieldPlaceholder = "영화를 입력해 주시옵소서 전하"
         //3
         self.present(vc, animated: true)
         
@@ -39,6 +39,7 @@ class TrendTableViewController: UITableViewController {
         let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
         //2.5 present 시 화면 옵션
         vc.modalPresentationStyle = .fullScreen
+        vc.textfieldPlaceholder = "영화를 입력해 주시옵소서 전하"
         //3
         self.present(vc, animated: true)
         
@@ -50,6 +51,7 @@ class TrendTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Trend", bundle: nil)
         //2
         let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as! BucketlistTableViewController
+        vc.textfieldPlaceholder = "영화를 입력해 주시옵소서 전하"
         //2.5
         let navi = UINavigationController(rootViewController: vc)
         
@@ -57,7 +59,7 @@ class TrendTableViewController: UITableViewController {
         //2.5 present 시 화면 옵션
         navi.modalPresentationStyle = .fullScreen
         //3
-        self.present(navi, animated: true)
+        self.present(navi, animated: true)  
 
     }
 }

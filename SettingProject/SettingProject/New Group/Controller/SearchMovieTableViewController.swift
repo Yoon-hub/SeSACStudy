@@ -37,18 +37,16 @@ class SearchMovieTableViewController: UITableViewController {
         return UIScreen.main.bounds.height / 7
     }
     
+
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let sb = UIStoryboard(name: "Trend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "RecommandCollectionViewController") as! RecommandCollectionViewController
         
-        let title = movieList.movie[indexPath.row].title
-        let relesase = movieList.movie[indexPath.row].releaseDate
-        vc.movieTitle = "\(title)\(relesase)"
+        vc.movieData = movieList.movie[indexPath.row]
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-
-
 }

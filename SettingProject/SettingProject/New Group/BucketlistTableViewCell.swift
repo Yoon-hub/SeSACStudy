@@ -12,4 +12,6 @@ class BucketlistTableViewCell: UITableViewCell {
     @IBOutlet weak var bucketListLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    static let identifiter = "BucketlistTableViewCell"
+    
 }

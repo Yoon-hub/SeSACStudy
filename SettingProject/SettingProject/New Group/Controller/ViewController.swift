@@ -11,7 +11,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Fuck"
+        navigationController?.navigationBar.barTintColor = .orange
         // Do any additional setup after loading the view.
     }
     

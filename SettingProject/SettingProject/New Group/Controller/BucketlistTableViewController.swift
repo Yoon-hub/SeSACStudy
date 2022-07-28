@@ -7,22 +7,42 @@
 
 import UIKit
 
+struct Todo{
+    var title : String
+    var done: Bool
+}
+
 class BucketlistTableViewController: UITableViewController {
     
     static let identifier = "BucketlistTableViewController"
     
-    var list = ["범죄도시2", "탑건", "토르"]
 
-    @IBOutlet weak var userTextField: UITextField!
+    //list 프로퍼티가 추가, 삭제 변경 되고 나서 테이블뷰를 항상 갱신!
+    var list = [Todo(title: "탑건", done: false), Todo(title: "범죄도시2", done: false)]{
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    
+    var textfieldPlaceholder = ""
+
+    //class는 ReferenceType -> 인스턴스 자체를 변경하지 않는 이상 한 번만 될 거다!
+    //IBOullet viewDidLoad 호출 되기 직전에 nil이 아닌 지 알 수 있음
+    @IBOutlet weak var userTextField: UITextField!{
+        didSet{
+            print("ViewDidLoad가 실행되기 직전에 실행")
+            userTextField.textColor = .systemRed
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userTextField.placeholder = textfieldPlaceholder
         navigationItem.title = "버킷리스트"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
-        
-        list.append("마녀2")
-        list.append("놈놈놈")
+        tableView.rowHeight = 60
+  
         
     }
     @objc func closeButtonClicked(){
@@ -31,7 +51,7 @@ class BucketlistTableViewController: UITableViewController {
     @IBAction func userTextFieldReturn(_ sender: UITextField) {
         
         if let value = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty, (2...6).contains(value.count){
-            list.append(value)
+            list.append(Todo(title: sender.text!, done: false))
             tableView.reloadData()
         } else {
             //토스트 메시지 띄우기
@@ -40,14 +60,12 @@ class BucketlistTableViewController: UITableViewController {
         guard let value = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty, (2...6).contains(value.count) else {
             return
         }
-        list.append(value)
+        list.append(Todo(title: sender.text!, done: false))
         tableView.reloadData()
         
         //중요
         //tableView.reloadData()
-        
-       // tableView.reloadSections(<#T##sections: IndexSet##IndexSet#>, with: <#T##UITableView.RowAnimation#>) section 하나만 갱신
-        //tableView.reloadRows(at: [IndexPath(row: 1, section: 1)], with: <#T##UITableView.RowAnimation#>) //cell 하나만 갱신
+
     }
     //section수
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,12 +80,29 @@ class BucketlistTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BucketlistTableViewCell", for: indexPath) as! BucketlistTableViewCell // as? 타입 캐스팅
         
-        cell.bucketListLabel.text = list[indexPath.row]
+        cell.bucketListLabel.text = list[indexPath.row].title
         cell.bucketListLabel.font = .boldSystemFont(ofSize: 18)
+        
+        cell.checkBoxButton.tag = indexPath.row
+        cell.checkBoxButton.addTarget(self, action: #selector(checkBoxButtonClicked(sender: )), for: .touchUpInside)
+        
+        let value = list[indexPath.row].done ? "checkmark.square" : "checkmark.square.fill"
+        cell.checkBoxButton.setImage(UIImage(systemName: value), for: .normal)
         
         return cell
         
     }
+    
+    @objc func checkBoxButtonClicked(sender: UIButton){
+        print("\(sender.tag) 번쨰 버튼 클릭!")
+            
+        list[sender.tag].done = !list[sender.tag].done
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
+        
+        //재사용 셀 오류 확인용 코드
+        //sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+    }
+    
     
     //편집 가능하게 cell 활성화
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

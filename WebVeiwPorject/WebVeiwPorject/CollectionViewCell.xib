@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="WebVeiwPorject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="264" height="269"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="264" height="269"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaQ-bv-STa">
+                        <rect key="frame" x="0.0" y="229" width="264" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="ZW9-hv-djF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-l4-byC">
+                        <rect key="frame" x="0.0" y="0.0" width="264" height="229"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0bZ-l4-byC" secondAttribute="trailing" id="0PR-md-8jC"/>
+                <constraint firstItem="SaQ-bv-STa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="A07-KW-kS2"/>
+                <constraint firstAttribute="bottom" secondItem="SaQ-bv-STa" secondAttribute="bottom" id="DeC-fm-9vv"/>
+                <constraint firstItem="0bZ-l4-byC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JWg-lC-AmV"/>
+                <constraint firstAttribute="trailing" secondItem="SaQ-bv-STa" secondAttribute="trailing" id="Riz-Kg-bTV"/>
+                <constraint firstItem="SaQ-bv-STa" firstAttribute="top" secondItem="0bZ-l4-byC" secondAttribute="bottom" id="ddc-97-ja1"/>
+                <constraint firstItem="0bZ-l4-byC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uEL-86-4Xi"/>
+            </constraints>
+            <size key="customSize" width="264" height="269"/>
+            <connections>
+                <outlet property="siteImageView" destination="0bZ-l4-byC" id="kH1-kW-lYB"/>
+                <outlet property="siteLabel" destination="SaQ-bv-STa" id="Byk-EE-SDj"/>
+            </connections>
+            <point key="canvasLocation" x="286.95652173913044" y="199.21875"/>
+        </collectionViewCell>
+    </objects>
+</document>
