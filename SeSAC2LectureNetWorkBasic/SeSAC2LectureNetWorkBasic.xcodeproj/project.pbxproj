@@ -22,6 +22,8 @@
 		6741751928935D4300C067A1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6741751828935D4300C067A1 /* LocationViewController.swift */; };
 		6741751D2893845000C067A1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6741751C2893845000C067A1 /* WebViewController.swift */; };
 		67417521289384CD00C067A1 /* mabino.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67417520289384CD00C067A1 /* mabino.ttf */; };
+		67655829289814E9006F3607 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 67655828289814E9006F3607 /* Kingfisher */; };
+		6765582B289815DE006F3607 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765582A289815DE006F3607 /* BeerViewController.swift */; };
 		677AD9092897527D007966A0 /* ReuseableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677AD9082897527D007966A0 /* ReuseableViewProtocol.swift */; };
 		677AD90C2897579F007966A0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677AD90B2897579F007966A0 /* Constant.swift */; };
 		677AD90E28975FA5007966A0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677AD90D28975FA5007966A0 /* UserDefaultsHelper.swift */; };
@@ -47,6 +49,7 @@
 		6741751828935D4300C067A1 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		6741751C2893845000C067A1 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		67417520289384CD00C067A1 /* mabino.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mabino.ttf; sourceTree = "<group>"; };
+		6765582A289815DE006F3607 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		677AD9082897527D007966A0 /* ReuseableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableViewProtocol.swift; sourceTree = "<group>"; };
 		677AD90B2897579F007966A0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		677AD90D28975FA5007966A0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67655829289814E9006F3607 /* Kingfisher in Frameworks */,
 				677AD91428977CF9007966A0 /* SwiftyJSON in Frameworks */,
 				677AD91128977CE1007966A0 /* Alamofire in Frameworks */,
 			);
@@ -116,6 +120,7 @@
 				674174E82892305F00C067A1 /* TranslateViewController.swift */,
 				6741751828935D4300C067A1 /* LocationViewController.swift */,
 				6737956E28910DC40072611B /* ListTableViewCell.swift */,
+				6765582A289815DE006F3607 /* BeerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			packageProductDependencies = (
 				677AD91028977CE1007966A0 /* Alamofire */,
 				677AD91328977CF9007966A0 /* SwiftyJSON */,
+				67655828289814E9006F3607 /* Kingfisher */,
 			);
 			productName = SeSAC2LectureNetWorkBasic;
 			productReference = 673795512890DD770072611B /* SeSAC2LectureNetWorkBasic.app */;
@@ -198,6 +204,7 @@
 			packageReferences = (
 				677AD90F28977CE1007966A0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				677AD91228977CF9007966A0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				67655827289814E9006F3607 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 673795522890DD770072611B /* Products */;
 			projectDirPath = "";
@@ -230,6 +237,7 @@
 			files = (
 				673795592890DD770072611B /* ViewController.swift in Sources */,
 				677AD90E28975FA5007966A0 /* UserDefaultsHelper.swift in Sources */,
+				6765582B289815DE006F3607 /* BeerViewController.swift in Sources */,
 				673795552890DD770072611B /* AppDelegate.swift in Sources */,
 				673795692890E1F40072611B /* SearchViewController.swift in Sources */,
 				6741751D2893845000C067A1 /* WebViewController.swift in Sources */,
@@ -460,6 +468,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		67655827289814E9006F3607 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		677AD90F28977CE1007966A0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -479,6 +495,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		67655828289814E9006F3607 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67655827289814E9006F3607 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		677AD91028977CE1007966A0 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 677AD90F28977CE1007966A0 /* XCRemoteSwiftPackageReference "Alamofire" */;
