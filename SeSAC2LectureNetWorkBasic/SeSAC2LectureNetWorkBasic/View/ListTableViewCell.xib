@@ -57,7 +57,7 @@
                 <outlet property="posterimageView" destination="FQg-gx-rLS" id="Fd9-Uf-Nnc"/>
                 <outlet property="titleLabel" destination="y4k-O2-eT7" id="lgh-Ot-aMc"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="114.17410714285714"/>
+            <point key="canvasLocation" x="131.8840579710145" y="118.86160714285714"/>
         </tableViewCell>
     </objects>
 </document>

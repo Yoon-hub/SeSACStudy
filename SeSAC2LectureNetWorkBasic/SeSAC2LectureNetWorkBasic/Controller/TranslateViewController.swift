@@ -13,30 +13,37 @@ import SwiftyJSON
 
 class TranslateViewController: UIViewController {
     
-    @IBOutlet weak var userInputTextField: UITextView!
+    @IBOutlet weak var userInputTextView: UITextView!
+    @IBOutlet weak var resultTextView: UITextView!
     
     let textViewPlaceholderText = "번역하고 싶은 문잔을 작성해주세용가리 치킨"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userInputTextField.delegate = self
+        userInputTextView.delegate = self
         
-        userInputTextField.text = textViewPlaceholderText
-        userInputTextField.textColor = .lightGray
+        userInputTextView.text = textViewPlaceholderText
+        userInputTextView.textColor = .lightGray
         
-        userInputTextField.font = UIFont(name: "MabinogiClassicR", size: 17)
-        requestTranslateData()
+        userInputTextView.font = UIFont(name: "MabinogiClassicR", size: 17)
+        userInputTextView.layer.borderWidth = 1
+        userInputTextView.layer.borderColor = UIColor.green.cgColor
+        
+        resultTextView.font = UIFont(name: "MabinogiClassicR", size: 17)
+        resultTextView.layer.borderWidth = 1
+        resultTextView.layer.borderColor = UIColor.green.cgColor
+        
         
     }
     
-    func requestTranslateData() {
+    func requestTranslateData(text: String) {
         
         let url = EndPoint.translateURL
         
         let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret" : APIKey.NAVER_SECRET]
         // header는 dictionarry구조
-        let parameter = ["source": "ko" , "target": "en", "text": "안녕하세요 저는 고래밥 과자를 좋아합니다."]
+        let parameter = ["source": "ko" , "target": "en", "text": text]
         
         AF.request(url, method: .post, parameters: parameter,headers: header).validate(statusCode: 200...500).responseJSON { response in
             switch response.result {
@@ -44,12 +51,14 @@ class TranslateViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
+                self.resultTextView.text = json["message"]["result"]["translatedText"].rawString()
+                
                 let statusCode = response.response?.statusCode ?? 500
                 
                 if statusCode == 200{
                      
                 } else {
-                    self.userInputTextField.text = json["errorMessage"].stringValue
+                    self.userInputTextView.text = json["errorMessage"].stringValue
                     
                 }
                 
@@ -60,6 +69,12 @@ class TranslateViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func translateButtonClicked(_ sender: UIButton) {
+        requestTranslateData(text: userInputTextView.text)
+        
+    }
+    
 }
 
 
