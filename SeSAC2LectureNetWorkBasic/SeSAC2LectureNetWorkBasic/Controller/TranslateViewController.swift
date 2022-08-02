@@ -8,8 +8,11 @@
 //UIResponderChain > reginFirstRespoder() > becomeFirstResponder()
 import UIKit
 
-class TranslateViewController: UIViewController {
+import Alamofire
+import SwiftyJSON
 
+class TranslateViewController: UIViewController {
+    
     @IBOutlet weak var userInputTextField: UITextView!
     
     let textViewPlaceholderText = "번역하고 싶은 문잔을 작성해주세용가리 치킨"
@@ -21,14 +24,47 @@ class TranslateViewController: UIViewController {
         
         userInputTextField.text = textViewPlaceholderText
         userInputTextField.textColor = .lightGray
-    
+        
         userInputTextField.font = UIFont(name: "MabinogiClassicR", size: 17)
+        requestTranslateData()
         
     }
     
+    func requestTranslateData() {
+        
+        let url = EndPoint.translateURL
+        
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret" : APIKey.NAVER_SECRET]
+        // header는 dictionarry구조
+        let parameter = ["source": "ko" , "target": "en", "text": "안녕하세요 저는 고래밥 과자를 좋아합니다."]
+        
+        AF.request(url, method: .post, parameters: parameter,headers: header).validate(statusCode: 200...500).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if statusCode == 200{
+                     
+                } else {
+                    self.userInputTextField.text = json["errorMessage"].stringValue
+                    
+                }
+                
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
+
 extension TranslateViewController: UITextViewDelegate{
+    // Delegate 는 동작에 관한 것들이고
     
     //택스트뷰의 텍스트가 변할 때마다 호출
     func textViewDidChange(_ textView: UITextView) {
@@ -57,3 +93,4 @@ extension TranslateViewController: UITextViewDelegate{
         }
     }
 }
+

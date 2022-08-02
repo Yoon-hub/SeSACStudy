@@ -59,7 +59,7 @@ class TrendTableViewController: UITableViewController {
         //2.5 present 시 화면 옵션
         navi.modalPresentationStyle = .fullScreen
         //3
-        self.present(navi, animated: true)  
+        self.present(navi, animated: true)
 
     }
 }

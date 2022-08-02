@@ -30,6 +30,8 @@ import Foundation
 2. enum case vs static = > case는 같은 rawValue를 가질 수 없다 능
  */
 
+
+
 enum StoryboardName { // 공통된 상수 관리에는 최고다!
     static let main = "Main"
     static let search = "Search"

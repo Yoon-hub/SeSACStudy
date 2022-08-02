@@ -9,10 +9,9 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
     
-    
-    @IBOutlet weak var titleLabel: UILabel! 
-    
-
+    @IBOutlet weak var posterimageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var etcInfo: UILabel!
 }
 
     
