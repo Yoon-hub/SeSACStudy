@@ -4,6 +4,7 @@
 
 #파일 제외
 .DB_Store
+
 APIKey.swift
 
 ## User settings

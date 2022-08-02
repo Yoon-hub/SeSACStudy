@@ -50,7 +50,7 @@ class LottoViewController: UIViewController{
         let lottoNumb = ["drwtNo1", "drwtNo2", "drwtNo3", "drwtNo4", "drwtNo5", "drwtNo6", "bnusNo"]
         
         AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
+            switch response.result {    
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
