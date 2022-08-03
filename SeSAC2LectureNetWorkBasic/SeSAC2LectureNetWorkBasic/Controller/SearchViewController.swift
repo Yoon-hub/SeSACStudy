@@ -59,6 +59,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         requestBoxOffice(text: today())
         searchTableView.rowHeight = 80
         
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        
         
     }
     
