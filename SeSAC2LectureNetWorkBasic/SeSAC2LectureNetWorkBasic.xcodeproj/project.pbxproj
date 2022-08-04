@@ -34,6 +34,7 @@
 		677AD90E28975FA5007966A0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677AD90D28975FA5007966A0 /* UserDefaultsHelper.swift */; };
 		677AD91128977CE1007966A0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 677AD91028977CE1007966A0 /* Alamofire */; };
 		677AD91428977CF9007966A0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 677AD91328977CF9007966A0 /* SwiftyJSON */; };
+		67D11554289B4FC200DF9C67 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 67D11553289B4FC200DF9C67 /* JGProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D11554289B4FC200DF9C67 /* JGProgressHUD in Frameworks */,
 				67655829289814E9006F3607 /* Kingfisher in Frameworks */,
 				677AD91428977CF9007966A0 /* SwiftyJSON in Frameworks */,
 				677AD91128977CE1007966A0 /* Alamofire in Frameworks */,
@@ -195,6 +197,7 @@
 				677AD91028977CE1007966A0 /* Alamofire */,
 				677AD91328977CF9007966A0 /* SwiftyJSON */,
 				67655828289814E9006F3607 /* Kingfisher */,
+				67D11553289B4FC200DF9C67 /* JGProgressHUD */,
 			);
 			productName = SeSAC2LectureNetWorkBasic;
 			productReference = 673795512890DD770072611B /* SeSAC2LectureNetWorkBasic.app */;
@@ -228,6 +231,7 @@
 				677AD90F28977CE1007966A0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				677AD91228977CF9007966A0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				67655827289814E9006F3607 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				67D11552289B4FC200DF9C67 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 673795522890DD770072611B /* Products */;
 			projectDirPath = "";
@@ -520,6 +524,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		67D11552289B4FC200DF9C67 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -537,6 +549,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 677AD91228977CF9007966A0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		67D11553289B4FC200DF9C67 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67D11552289B4FC200DF9C67 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

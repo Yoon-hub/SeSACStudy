@@ -9,6 +9,8 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
+
 /*
  Swift Protocol
  - Delegate
@@ -23,8 +25,10 @@ import SwiftyJSON
  각 json value -> list -> 테이블뷰 갱신
  서버의 응답이 몇개인 지 모를 경우에는?
  
- 
- 
+ pagenation
+ 1. will display cell: 권장 x, 보여줄 예정
+ 2. Scrollview의 scroll 시점 활용, 가장 많이 사용
+ 3. Protocol 활용 DataSourcePrefetching
  */
 
 extension UIViewController {
@@ -42,6 +46,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //BoxOffice 배열
     var list: [BoxOfficeModel] = []
+    //ProgressView
+    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,11 +96,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func requestBoxOffice(text: String){
         
-        self.list.removeAll()
+        hud.show(in: view)
+        list.removeAll()
         
         let url = "\(EndPoint.boxofficeURL)key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
         
-        AF.request(url, method: .get).validate().responseJSON { response in
+        //Serialization <-> Desrialization
+        AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -111,10 +119,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             
                 //list배열에 데이터 추가
-
+                
                 self.searchTableView.reloadData()
+                self.hud.dismiss(animated: true)
             case .failure(let error):
                 print(error)
+                self.hud.dismiss(animated: true)
+                //시뮬레이터 실패 테스트 >
             }
         }
     }
