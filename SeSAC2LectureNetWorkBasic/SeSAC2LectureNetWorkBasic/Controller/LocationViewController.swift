@@ -12,6 +12,7 @@ class LocationViewController: UIViewController {
     
     
     // Notification 1.
+    @IBOutlet weak var imageView: UIImageView!
     let notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
@@ -86,6 +87,24 @@ class LocationViewController: UIViewController {
     
     @IBAction func noticationButtonClicked(_ sender: UIButton) {
         requestAuthorization()
+    }
+    
+    @IBAction func donloadImage(_ sender: UIButton) {
+        let url = "https://apod.nasa.gov/apod/image/2208/M13_final2_sinfirma.jpg"
+        print("1", Thread.isMainThread)
+        
+        DispatchQueue.global().async { //동시 여러 작업 가능하게 해줘! 응애
+            print("2", Thread.isMainThread)
+            let data = try! Data(contentsOf: URL(string: url)!)
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async { // 화면 전환 하는 작업을 띠워준다
+                print("3", Thread.isMainThread)
+                self.imageView.image = image
+            }
+            
+        }
+
     }
     
 }
