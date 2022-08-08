@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  TMDBProject
+//  SeSAC2Week6
 //
-//  Created by 최윤제 on 2022/08/03.
+//  Created by 최윤제 on 2022/08/08.
 //
 
 import UIKit
