@@ -23,6 +23,9 @@
 		67BE90FF28AC71B500AFD2A5 /* CodeBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BE90FE28AC71B500AFD2A5 /* CodeBaseViewController.swift */; };
 		67BE910228AC81B500AFD2A5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67BE910128AC81B500AFD2A5 /* SnapKit */; };
 		67BE910428AC823300AFD2A5 /* CodeSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BE910328AC823300AFD2A5 /* CodeSnapViewController.swift */; };
+		67BE910628AC8C1D00AFD2A5 /* CodeSnap2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BE910528AC8C1D00AFD2A5 /* CodeSnap2ViewController.swift */; };
+		67BE910828ACD75C00AFD2A5 /* KaKaoTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BE910728ACD75C00AFD2A5 /* KaKaoTalkViewController.swift */; };
+		67BE910A28ACD8BB00AFD2A5 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BE910928ACD8BB00AFD2A5 /* testViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		679201C128AB41750033A36F /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		67BE90FE28AC71B500AFD2A5 /* CodeBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBaseViewController.swift; sourceTree = "<group>"; };
 		67BE910328AC823300AFD2A5 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
+		67BE910528AC8C1D00AFD2A5 /* CodeSnap2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnap2ViewController.swift; sourceTree = "<group>"; };
+		67BE910728ACD75C00AFD2A5 /* KaKaoTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoTalkViewController.swift; sourceTree = "<group>"; };
+		67BE910928ACD8BB00AFD2A5 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 				6792018428AB1FCF0033A36F /* AppDelegate.swift */,
 				6792018628AB1FCF0033A36F /* SceneDelegate.swift */,
 				6792018828AB1FCF0033A36F /* ViewController.swift */,
+				67BE910928ACD8BB00AFD2A5 /* testViewController.swift */,
 				6792018A28AB1FCF0033A36F /* Main.storyboard */,
 				6792018D28AB1FD00033A36F /* Assets.xcassets */,
 				6792018F28AB1FD00033A36F /* LaunchScreen.storyboard */,
@@ -155,6 +162,8 @@
 			children = (
 				67BE90FE28AC71B500AFD2A5 /* CodeBaseViewController.swift */,
 				67BE910328AC823300AFD2A5 /* CodeSnapViewController.swift */,
+				67BE910528AC8C1D00AFD2A5 /* CodeSnap2ViewController.swift */,
+				67BE910728ACD75C00AFD2A5 /* KaKaoTalkViewController.swift */,
 			);
 			path = CodeBase;
 			sourceTree = "<group>";
@@ -263,8 +272,11 @@
 			files = (
 				6792018928AB1FCF0033A36F /* ViewController.swift in Sources */,
 				6792018528AB1FCF0033A36F /* AppDelegate.swift in Sources */,
+				67BE910628AC8C1D00AFD2A5 /* CodeSnap2ViewController.swift in Sources */,
 				6792018728AB1FCF0033A36F /* SceneDelegate.swift in Sources */,
 				679201BC28AB40C70033A36F /* SecondViewController.swift in Sources */,
+				67BE910828ACD75C00AFD2A5 /* KaKaoTalkViewController.swift in Sources */,
+				67BE910A28ACD8BB00AFD2A5 /* testViewController.swift in Sources */,
 				67BE910428AC823300AFD2A5 /* CodeSnapViewController.swift in Sources */,
 				67BE90FF28AC71B500AFD2A5 /* CodeBaseViewController.swift in Sources */,
 				679201BE28AB40D30033A36F /* ThirdViewController.swift in Sources */,
@@ -429,7 +441,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2Week7Diary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2Week7Diary.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -457,7 +469,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2Week7Diary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2Week7Diary.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -10,6 +10,7 @@ import SeSAC2UIFramework
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var testImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -17,12 +18,17 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    
+        testImageView.contentMode = .scaleAspectFill
+        testImageView.layer.masksToBounds = true
+        testImageView.layer.cornerRadius = testImageView.frame.width / 2
+    
         
-        let vc = CodeSnapViewController()
+        let vc = KaKaoTalkViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
         
-        testOpen()
+//        testOpen()
 //        showSesacAlert(title: "테스트", message: "테스트 메세지", buttonTitle: "변경") { _ in
 //            self.view.backgroundColor = .lightGray
 //
@@ -33,9 +39,9 @@ class ViewController: UIViewController {
 //        sesacShowActivityViewController(shareImage: image, shareURL: shareURL, shareText: text)
 //
 //
-        let web = OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
+//        let web = OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
         
-        
+   
       
     }
 }

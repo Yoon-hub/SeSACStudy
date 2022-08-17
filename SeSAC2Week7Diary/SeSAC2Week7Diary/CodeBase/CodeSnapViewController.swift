@@ -10,7 +10,7 @@ import SnapKit
 
 class CodeSnapViewController: UIViewController {
 
-    let photoImageView: UIImageView = {
+    let photoImageView: UIImageView = { () -> (UIImageView) in
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.backgroundColor = .lightGray
