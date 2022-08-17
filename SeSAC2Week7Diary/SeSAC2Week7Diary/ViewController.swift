@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let vc = CodeBaseViewController()
+        let vc = CodeSnapViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
         

@@ -10,10 +10,45 @@ import SnapKit
 
 class CodeSnapViewController: UIViewController {
 
-    let photoImageView = UIImageView()
-    let titletextField = UITextField()
-    let dateTextField = UITextField()
-    let contentTextView = UITextView()
+    let photoImageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.backgroundColor = .lightGray
+        
+        return view
+    }()
+    
+    let titletextField: UITextField = {
+        let view = UITextField()
+        view.borderStyle = .none
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 1
+        view.placeholder = "제목을 입력해주세요"
+        view.textAlignment = .center
+        view.font = .boldSystemFont(ofSize: 15)
+        
+        return view
+    }()
+    
+    let dateTextField: UITextField = {
+        let view = UITextField()
+        view.borderStyle = .none
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 1
+        view.placeholder = "제목을 입력해주세요"
+        view.textAlignment = .center
+        view.font = .boldSystemFont(ofSize: 15)
+        
+        return view
+    }()
+    
+    let contentTextView: UITextView = {
+        let view = UITextView()
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 1
+        
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +62,21 @@ class CodeSnapViewController: UIViewController {
         [photoImageView, titletextField, dateTextField, contentTextView].forEach {
             view.addSubview($0)
         }
-        photoImageView.backgroundColor = .lightGray
-        photoImageView.contentMode = .scaleAspectFill
         
-        titletextField.borderStyle = .none
-        titletextField.layer.borderColor = UIColor.black.cgColor
-        titletextField.layer.borderWidth = 1
-        titletextField.placeholder = "제목을 입력해주세요"
-        titletextField.textAlignment = .center
-        titletextField.font = .boldSystemFont(ofSize: 15)
+        photoImageView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leadingMargin.equalTo(20)
+            make.trailingMargin.equalTo(-20)
+            make.height.equalTo(view).multipliedBy(0.4)
+        }
+        
+        titletextField.snp.makeConstraints { make in
+            make.top.equalTo(photoImageView.snp.bottom).offset(20)
+            make.leadingMargin.equalTo(20)
+            make.trailingMargin.equalTo(-20)
+            make.height.equalTo(50)
+        }
+
         
     }
 
