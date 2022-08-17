@@ -76,6 +76,20 @@ class CodeSnapViewController: UIViewController {
             make.trailingMargin.equalTo(-20)
             make.height.equalTo(50)
         }
+        
+        dateTextField.snp.makeConstraints { make in
+            make.top.equalTo(titletextField.snp.bottom).offset(20)
+            make.leadingMargin.equalTo(20)
+            make.trailingMargin.equalTo(-20)
+            make.height.equalTo(50)
+        }
+        
+        contentTextView.snp.makeConstraints { make in
+            make.top.equalTo(dateTextField.snp.bottom).offset(20)
+            make.leadingMargin.equalTo(20)
+            make.trailingMargin.equalTo(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
 
         
     }
