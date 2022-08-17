@@ -38,9 +38,11 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
+        
+        
     }
     
-    func searchBlog() {
+    private func searchBlog() {
         KakaoAPIManager.shared.callRequest(type: .blog, query: "고래밥") { json in
             
             for item in json["documents"].arrayValue {

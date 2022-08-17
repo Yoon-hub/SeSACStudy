@@ -142,7 +142,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     //Location9. 사용자의 권한 상태가 바뀔 때를 알려줌
-    //거부 했다ㅏ 설정에서 변경했거나, 혹은 notDetermined에서 허용을 했거나 등
+    //거부 했다 설정에서 변경했거나, 혹은 notDetermined에서 허용을 했거나 등
     //허용 했어서 위치를 가지고오는 중에, 설정에서 거부하고 돌아온다면??
     //iOS 14이상: 사용자의 권한 상태가 변경이 될 때, 위치 관리자 생성할 때 호출됨
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

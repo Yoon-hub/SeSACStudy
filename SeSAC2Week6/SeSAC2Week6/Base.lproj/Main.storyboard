@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9s-zj-NLe">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vSb-Xh-7oe">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -308,13 +308,117 @@
             </objects>
             <point key="canvasLocation" x="3555" y="91"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="ztj-1Z-fJU">
+            <objects>
+                <viewController id="vSb-Xh-7oe" customClass="CameraViewController" customModule="SeSAC2Week6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DFR-2C-FAT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iys-21-5F8">
+                                <rect key="frame" x="20" y="134" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.75294119120000003" green="0.50196081400000003" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jjO-1U-XM5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="사진 촬영"/>
+                                <connections>
+                                    <action selector="cameraButtonClicked:" destination="vSb-Xh-7oe" eventType="touchUpInside" id="AgQ-Pw-QI7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oco-uR-mDX">
+                                <rect key="frame" x="20" y="204" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.75294119120000003" green="0.50196081400000003" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="73q-jS-wTj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="사진 불러오기"/>
+                                <connections>
+                                    <action selector="photoLivraryButtonClicked:" destination="vSb-Xh-7oe" eventType="touchUpInside" id="S5o-Kz-JP9"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayJ-Zw-mJX">
+                                <rect key="frame" x="20" y="274" width="335" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="oKY-PF-o2m"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZX-k3-ctX">
+                                <rect key="frame" x="20" y="444" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.75294119120000003" green="0.50196081400000003" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rZW-Fc-dol"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="사진 저장"/>
+                                <connections>
+                                    <action selector="saveToPhotoLibrary:" destination="vSb-Xh-7oe" eventType="touchUpInside" id="H2c-jm-HeQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLe-D2-HRk">
+                                <rect key="frame" x="20" y="514" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Xcl-bz-ZRP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="clovaFaceButtonClicked:" destination="vSb-Xh-7oe" eventType="touchUpInside" id="1ds-42-JXb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-hO-LO5">
+                                <rect key="frame" x="20" y="64" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.75294119120000003" green="0.50196081400000003" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wsJ-La-hB3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="프레임워크로 사진저장"/>
+                                <connections>
+                                    <action selector="YPImagePickerButtonClicked:" destination="vSb-Xh-7oe" eventType="touchUpInside" id="mNg-3z-bug"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jnI-hL-L3e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ayJ-Zw-mJX" firstAttribute="top" secondItem="Oco-uR-mDX" secondAttribute="bottom" constant="20" id="Ayd-gO-Hd4"/>
+                            <constraint firstItem="cUm-hO-LO5" firstAttribute="top" secondItem="jnI-hL-L3e" secondAttribute="top" constant="20" id="CKk-Qw-GVR"/>
+                            <constraint firstItem="YLe-D2-HRk" firstAttribute="top" secondItem="mZX-k3-ctX" secondAttribute="bottom" constant="20" id="DU6-SQ-1Zd"/>
+                            <constraint firstItem="jnI-hL-L3e" firstAttribute="trailing" secondItem="ayJ-Zw-mJX" secondAttribute="trailing" constant="20" id="Evm-eF-fkn"/>
+                            <constraint firstItem="iys-21-5F8" firstAttribute="top" secondItem="cUm-hO-LO5" secondAttribute="bottom" constant="20" id="GuA-6B-f3h"/>
+                            <constraint firstItem="mZX-k3-ctX" firstAttribute="leading" secondItem="jnI-hL-L3e" secondAttribute="leading" constant="20" id="MXM-Hn-1mw"/>
+                            <constraint firstItem="Oco-uR-mDX" firstAttribute="top" secondItem="iys-21-5F8" secondAttribute="bottom" constant="20" id="Nkw-I8-u73"/>
+                            <constraint firstItem="mZX-k3-ctX" firstAttribute="top" secondItem="ayJ-Zw-mJX" secondAttribute="bottom" constant="20" id="Qv0-Pe-THJ"/>
+                            <constraint firstItem="jnI-hL-L3e" firstAttribute="trailing" secondItem="mZX-k3-ctX" secondAttribute="trailing" constant="20" id="avv-KI-SJM"/>
+                            <constraint firstItem="Oco-uR-mDX" firstAttribute="leading" secondItem="jnI-hL-L3e" secondAttribute="leading" constant="20" id="gOP-dr-S0f"/>
+                            <constraint firstItem="YLe-D2-HRk" firstAttribute="leading" secondItem="jnI-hL-L3e" secondAttribute="leading" constant="20" id="kiV-pu-LoN"/>
+                            <constraint firstItem="jnI-hL-L3e" firstAttribute="trailing" secondItem="iys-21-5F8" secondAttribute="trailing" constant="20" id="nBp-Bf-pco"/>
+                            <constraint firstItem="jnI-hL-L3e" firstAttribute="trailing" secondItem="YLe-D2-HRk" secondAttribute="trailing" constant="20" id="nOv-er-bZ3"/>
+                            <constraint firstItem="cUm-hO-LO5" firstAttribute="leading" secondItem="jnI-hL-L3e" secondAttribute="leading" constant="20" id="pjq-yk-jgy"/>
+                            <constraint firstItem="iys-21-5F8" firstAttribute="leading" secondItem="jnI-hL-L3e" secondAttribute="leading" constant="20" id="qa4-1q-ntg"/>
+                            <constraint firstItem="jnI-hL-L3e" firstAttribute="trailing" secondItem="cUm-hO-LO5" secondAttribute="trailing" constant="20" id="qdE-cw-B56"/>
+                            <constraint firstItem="jnI-hL-L3e" firstAttribute="trailing" secondItem="Oco-uR-mDX" secondAttribute="trailing" constant="20" id="rBo-tt-E1d"/>
+                            <constraint firstItem="ayJ-Zw-mJX" firstAttribute="leading" secondItem="jnI-hL-L3e" secondAttribute="leading" constant="20" id="uHY-uG-ix4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="ayJ-Zw-mJX" id="pT7-Jl-l3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94Z-Vd-pWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4425" y="101"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="E1D-FQ-2AW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZYb-ad-xwl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IQf-MC-Qkj">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
