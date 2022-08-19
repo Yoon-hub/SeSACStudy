@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import UIKit
+
+extension UILabel {
+    public func setLable(title: String) {
+        self.text = title
+        self.font = .boldSystemFont(ofSize: 12)
+        self.textColor = .white
+        self.textAlignment = .center
+
+    }
+}

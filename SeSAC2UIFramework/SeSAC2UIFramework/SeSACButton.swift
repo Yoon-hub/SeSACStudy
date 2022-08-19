@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIButton {
+    
+    public func setButton(systemName: String) {
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 50)
+        self.setImage(UIImage(systemName: systemName , withConfiguration: config), for: .normal)
+        self.tintColor = .white
+        
+    }
+}

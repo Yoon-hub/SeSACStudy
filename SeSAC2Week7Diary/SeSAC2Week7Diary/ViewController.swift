@@ -7,42 +7,67 @@
 
 import UIKit
 import SeSAC2UIFramework
+import SnapKit
+
+extension Notification.Name {
+    static let saveButton = NSNotification.Name("saveButtonNotification")
+}
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var testImageView: UIImageView!
+    let nameButton: UIButton = {
+        let view = UIButton()
+        view.setTitle("닉네임", for: .normal)
+        view.backgroundColor = .blue
+        view.tintColor = .black
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        configure()
+        
+        nameButton.addTarget(self, action: #selector(nameButtonClicked) , for: .touchUpInside)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(saveButtonNotificationObserver(notification:)), name: .saveButton, object: nil)
+        
 
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        testImageView.contentMode = .scaleAspectFill
-        testImageView.layer.masksToBounds = true
-        testImageView.layer.cornerRadius = testImageView.frame.width / 2
-    
-        
-        let vc = KaKaoTalkViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-        
-//        testOpen()
-//        showSesacAlert(title: "테스트", message: "테스트 메세지", buttonTitle: "변경") { _ in
-//            self.view.backgroundColor = .lightGray
-//
-//        }
-//        let image = UIImage(systemName: "star.fill")!
-//        let shareURL = "https://www.apple.com"
-//        let text = "WWDC What's New!!"
-//        sesacShowActivityViewController(shareImage: image, shareURL: shareURL, shareText: text)
-//
-//
-//        let web = OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
-        
-   
-      
+    @objc
+    func saveButtonNotificationObserver(notification: NSNotification) {
+        if let name = notification.userInfo?["name"] as? String {
+            self.nameButton.setTitle(name, for: .normal)
+        } else {
+            
+        }
     }
+    
+    @objc
+    func nameButtonClicked() {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("test"), object: nil, userInfo: ["name": "\(Int.random(in: 0...100))"])
+        
+        let vc = ProfileViewController()
+        
+        vc.saveButtonActionHandler = { result in
+            self.nameButton.setTitle(result, for: .normal)
+        }
+
+
+        
+        vc.modalPresentationStyle = .formSheet
+        present(vc, animated: true)
+    }
+    
+    func configure() {
+        view.addSubview(nameButton)
+        
+        nameButton.snp.makeConstraints { make in
+            make.height.width.equalTo(200)
+            make.center.equalTo(view)
+        }
+    }
+
 }
 

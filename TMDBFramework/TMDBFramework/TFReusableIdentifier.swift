@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol ReuseableViewProtocol {
+public protocol ReuseableViewProtocol: AnyObject {
     static var resuableIdentifer : String { get }
 }
 
