@@ -37,13 +37,17 @@ class ChangeViewController: UIViewController{
         changeView.collectionView.prefetchDataSource = self
         changeView.collectionView.allowsMultipleSelection = false
         changeView.searchBar.delegate = self
+        
     
     }
+    
+
     
     @objc
     func chageImage() {
         completionHandler()
         navigationController?.popViewController(animated: true)
+        
     }
     
     func fetchImage(search: String) {
@@ -91,7 +95,7 @@ extension ChangeViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = changeView.collectionView.cellForItem(at: indexPath)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(chageImage))
         selected = imageList[indexPath.item]
-        print(selected)
+        view.endEditing(true)
     }
     
     
