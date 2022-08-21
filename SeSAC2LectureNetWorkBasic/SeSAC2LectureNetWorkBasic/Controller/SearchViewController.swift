@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import JGProgressHUD
-
+    
 /*
  Swift Protocol
  - Delegate
