@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 class MainViewController: UIViewController {
     
     let mainView = MainView()
@@ -23,6 +25,9 @@ class MainViewController: UIViewController {
     @objc
     func changeButtonClicked() {
         let vc = ChangeViewController()
+        vc.completionHandler = {
+            self.mainView.backgroundImageView.kf.setImage(with: URL(string: vc.selected))
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
