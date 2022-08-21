@@ -19,6 +19,9 @@
 		67B2555E28AFB974002489CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2555D28AFB974002489CC /* MainViewController.swift */; };
 		67B2556028AFBEB7002489CC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2555F28AFBEB7002489CC /* BaseView.swift */; };
 		67B2556228AFC0A8002489CC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2556128AFC0A8002489CC /* MainView.swift */; };
+		67BBDCA328B083460096CC4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCA228B083460096CC4D /* LoginViewController.swift */; };
+		67BBDCA528B083D10096CC4D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCA428B083D10096CC4D /* LoginView.swift */; };
+		67BBDCA728B0A4110096CC4D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCA628B0A4110096CC4D /* CustomTextField.swift */; };
 		67D869A628AFE34900151787 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67D869A528AFE34900151787 /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,9 @@
 		67B2555D28AFB974002489CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		67B2555F28AFBEB7002489CC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		67B2556128AFC0A8002489CC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		67BBDCA228B083460096CC4D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		67BBDCA428B083D10096CC4D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		67BBDCA628B0A4110096CC4D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		67B2553F28AFB266002489CC /* CodeNeflix */ = {
 			isa = PBXGroup;
 			children = (
+				67BBDCA128B0829C0096CC4D /* Login */,
 				67B2555828AFB48F002489CC /* Main */,
 				67B2555528AFB375002489CC /* Utility */,
 				67B2554228AFB266002489CC /* SceneDelegate.swift */,
@@ -101,12 +108,22 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		67BBDCA128B0829C0096CC4D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				67BBDCA228B083460096CC4D /* LoginViewController.swift */,
+				67BBDCA428B083D10096CC4D /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		67D869A928AFE6DE00151787 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				67A5690028AFEC0300BA01F3 /* PreviewImageView.swift */,
 				67A5690228AFF5FD00BA01F3 /* BoldCustomLabel.swift */,
 				67A5690428AFFD8F00BA01F3 /* NomalCustomLabel.swift */,
+				67BBDCA628B0A4110096CC4D /* CustomTextField.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -196,6 +213,9 @@
 				67B2556028AFBEB7002489CC /* BaseView.swift in Sources */,
 				67B2554328AFB266002489CC /* SceneDelegate.swift in Sources */,
 				67B2555E28AFB974002489CC /* MainViewController.swift in Sources */,
+				67BBDCA728B0A4110096CC4D /* CustomTextField.swift in Sources */,
+				67BBDCA528B083D10096CC4D /* LoginView.swift in Sources */,
+				67BBDCA328B083460096CC4D /* LoginViewController.swift in Sources */,
 				67A5690328AFF5FD00BA01F3 /* BoldCustomLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

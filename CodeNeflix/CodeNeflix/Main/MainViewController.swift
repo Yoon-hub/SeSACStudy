@@ -13,6 +13,16 @@ class MainViewController: BaseViewController {
     
     override func loadView() {
         self.view = mainView
+        mainView.playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    func playButtonClicked() {
+        let vc = LoginViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        
+        
     }
         
 
