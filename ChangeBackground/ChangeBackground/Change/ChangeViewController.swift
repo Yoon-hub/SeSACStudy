@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChangeViewController: UIViewController {
+class ChangeViewController: UIViewController, UISearchBarDelegate {
     
     let changeView = ChangeView()
     
@@ -26,13 +26,15 @@ class ChangeViewController: UIViewController {
         changeView.collectionView.dataSource = self
         changeView.collectionView.register(ChageCollectionViewCell.self, forCellWithReuseIdentifier: ChageCollectionViewCell.reusable)
         
+        changeView.searchBar.delegate = self
     }
 }
+
 
 extension ChangeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,5 +43,15 @@ extension ChangeViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if let search = searchBar.text, searchBar.text != ""{
+            ImageAPIManager.requestImage(search: search, page: 1)
+        } else {
+            searchBar.placeholder = "검색결과를 입력해주세여"
+        }
+    }
+    
     
 }
+
