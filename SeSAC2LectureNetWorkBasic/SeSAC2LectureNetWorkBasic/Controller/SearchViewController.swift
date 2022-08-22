@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import JGProgressHUD
+import RealmSwift
     
 /*
  Swift Protocol
@@ -49,6 +50,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //ProgressView
     let hud = JGProgressHUD()
     
+    let localRealm = try! Realm()
+    
+    var tasks: Results<BoxOfficeInfo>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,7 +67,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //XIB : xml inerface builder <= Nib - 예전이름
         searchTableView.register( UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
-        requestBoxOffice(text: today())
+        
+        tasks = localRealm.objects(BoxOfficeInfo.self).filter("date == '\(today())'")
+        if tasks.count == 0 {
+            print("API 통신함")
+            requestBoxOffice(text: today())
+        } else {
+            print("Realm에서 꺼내옴")
+            for i in tasks {
+                list.append(BoxOfficeModel(movieTitle: i.movieTitle, releaseData: i.releaseData, totalCount: i.totalCount))
+                searchTableView.reloadData()
+            }
+        }
+        //requestBoxOffice(text: today())
+        
+        print("Realm is located at:", localRealm.configuration.fileURL!)
+        
+        
         searchTableView.rowHeight = 80
         
         let format = DateFormatter()
@@ -106,7 +127,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
                 
                 
                 for movie in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
@@ -115,6 +135,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let audiAcc = movie["audiAcc"].stringValue
                     
                     self.list.append(BoxOfficeModel(movieTitle: movieNm, releaseData: openDt, totalCount: audiAcc))
+                    
+                    let task = BoxOfficeInfo(date: self.today(), movieTitle: movieNm, releaseData: openDt, totalCount: audiAcc)// => Record 한줄 추가
+                    try! self.localRealm.write {
+                        self.localRealm.add(task) //Create
+                    }
+
                 }
                 
             
