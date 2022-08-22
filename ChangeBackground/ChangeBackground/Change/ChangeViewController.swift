@@ -38,11 +38,9 @@ class ChangeViewController: UIViewController{
         changeView.collectionView.allowsMultipleSelection = false
         changeView.searchBar.delegate = self
         
-    
+        
     }
-    
 
-    
     @objc
     func chageImage() {
         completionHandler()

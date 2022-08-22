@@ -20,3 +20,12 @@ extension UICollectionViewCell: Reusable {
     
     
 }
+
+extension UITableViewCell: Reusable {
+    
+   static var reusable: String {
+         return String(describing: self)
+    }
+    
+    
+}

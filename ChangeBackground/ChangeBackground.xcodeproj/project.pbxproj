@@ -26,6 +26,14 @@
 		67BBDCED28B29F4C0096CC4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 67BBDCEC28B29F4C0096CC4D /* Alamofire */; };
 		67BBDCF028B2A9900096CC4D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 67BBDCEF28B2A9900096CC4D /* Kingfisher */; };
 		67BBDCF328B2AAB50096CC4D /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 67BBDCF228B2AAB50096CC4D /* JGProgressHUD */; };
+		67BBDCF728B3163F0096CC4D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 67BBDCF628B3163F0096CC4D /* Realm */; };
+		67BBDCF928B3163F0096CC4D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 67BBDCF828B3163F0096CC4D /* RealmSwift */; };
+		67BBDCFC28B319EC0096CC4D /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCFB28B319EC0096CC4D /* RealmModel.swift */; };
+		67BBDCFF28B32AD20096CC4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCFE28B32AD20096CC4D /* HomeViewController.swift */; };
+		67BBDD0228B380810096CC4D /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0128B380810096CC4D /* ShoppingViewController.swift */; };
+		67BBDD0428B380A10096CC4D /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0328B380A10096CC4D /* ShoppingView.swift */; };
+		67BBDD0828B3850A0096CC4D /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */; };
+		67BBDD0D28B38D750096CC4D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0C28B38D750096CC4D /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +53,12 @@
 		67BBDCE028B28BFF0096CC4D /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		67BBDCE428B29E9C0096CC4D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		67BBDCE628B29F120096CC4D /* ImageAPIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIManger.swift; sourceTree = "<group>"; };
+		67BBDCFB28B319EC0096CC4D /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		67BBDCFE28B32AD20096CC4D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		67BBDD0128B380810096CC4D /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		67BBDD0328B380A10096CC4D /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
+		67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		67BBDD0C28B38D750096CC4D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BBDCF728B3163F0096CC4D /* Realm in Frameworks */,
 				67BBDCF028B2A9900096CC4D /* Kingfisher in Frameworks */,
+				67BBDCF928B3163F0096CC4D /* RealmSwift in Frameworks */,
 				67BBDCED28B29F4C0096CC4D /* Alamofire in Frameworks */,
 				67BBDCEA28B29F3E0096CC4D /* SwiftyJSON in Frameworks */,
 				67BBDCD428B26BBC0096CC4D /* SnapKit in Frameworks */,
@@ -82,6 +98,9 @@
 		67BBDCB328B253D30096CC4D /* ChangeBackground */ = {
 			isa = PBXGroup;
 			children = (
+				67BBDD0028B380500096CC4D /* Shopping */,
+				67BBDCFD28B32A8C0096CC4D /* HomeViewController */,
+				67BBDCFA28B319CF0096CC4D /* Realm */,
 				67BBDCE328B29E830096CC4D /* Constant */,
 				67BBDCE228B2964F0096CC4D /* Manager */,
 				67BBDCDF28B28BE80096CC4D /* Protocol */,
@@ -101,6 +120,7 @@
 		67BBDCC828B254870096CC4D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				67BBDD0E28B38D7A0096CC4D /* Constatins */,
 				67BBDCC928B254AD0096CC4D /* BaseView.swift */,
 			);
 			path = Utility;
@@ -149,6 +169,40 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		67BBDCFA28B319CF0096CC4D /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				67BBDCFB28B319EC0096CC4D /* RealmModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		67BBDCFD28B32A8C0096CC4D /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				67BBDCFE28B32AD20096CC4D /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		67BBDD0028B380500096CC4D /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				67BBDD0128B380810096CC4D /* ShoppingViewController.swift */,
+				67BBDD0328B380A10096CC4D /* ShoppingView.swift */,
+				67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		67BBDD0E28B38D7A0096CC4D /* Constatins */ = {
+			isa = PBXGroup;
+			children = (
+				67BBDD0C28B38D750096CC4D /* CustomButton.swift */,
+			);
+			path = Constatins;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,6 +225,8 @@
 				67BBDCEC28B29F4C0096CC4D /* Alamofire */,
 				67BBDCEF28B2A9900096CC4D /* Kingfisher */,
 				67BBDCF228B2AAB50096CC4D /* JGProgressHUD */,
+				67BBDCF628B3163F0096CC4D /* Realm */,
+				67BBDCF828B3163F0096CC4D /* RealmSwift */,
 			);
 			productName = ChangeBackground;
 			productReference = 67BBDCB128B253D30096CC4D /* ChangeBackground.app */;
@@ -206,6 +262,7 @@
 				67BBDCEB28B29F4C0096CC4D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				67BBDCEE28B2A9900096CC4D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				67BBDCF128B2AAB50096CC4D /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				67BBDCF528B3163F0096CC4D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 67BBDCB228B253D30096CC4D /* Products */;
 			projectDirPath = "";
@@ -235,15 +292,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				67BBDCB528B253D30096CC4D /* AppDelegate.swift in Sources */,
+				67BBDD0828B3850A0096CC4D /* ShoppingTableViewCell.swift in Sources */,
+				67BBDCFC28B319EC0096CC4D /* RealmModel.swift in Sources */,
+				67BBDD0228B380810096CC4D /* ShoppingViewController.swift in Sources */,
 				67BBDCB728B253D30096CC4D /* SceneDelegate.swift in Sources */,
 				67BBDCCA28B254AD0096CC4D /* BaseView.swift in Sources */,
+				67BBDD0428B380A10096CC4D /* ShoppingView.swift in Sources */,
 				67BBDCDA28B2710B0096CC4D /* ChangeView.swift in Sources */,
 				67BBDCE528B29E9C0096CC4D /* APIKey.swift in Sources */,
 				67BBDCD828B2709F0096CC4D /* ChangeViewController.swift in Sources */,
 				67BBDCD128B26A300096CC4D /* MainView.swift in Sources */,
 				67BBDCCF28B269500096CC4D /* MainViewController.swift in Sources */,
 				67BBDCE728B29F120096CC4D /* ImageAPIManger.swift in Sources */,
+				67BBDD0D28B38D750096CC4D /* CustomButton.swift in Sources */,
 				67BBDCDC28B288430096CC4D /* ChageCollectionViewCell.swift in Sources */,
+				67BBDCFF28B32AD20096CC4D /* HomeViewController.swift in Sources */,
 				67BBDCE128B28BFF0096CC4D /* ReusableProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +567,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		67BBDCF528B3163F0096CC4D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -531,6 +602,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 67BBDCF128B2AAB50096CC4D /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
+		};
+		67BBDCF628B3163F0096CC4D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67BBDCF528B3163F0096CC4D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		67BBDCF828B3163F0096CC4D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67BBDCF528B3163F0096CC4D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
