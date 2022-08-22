@@ -43,6 +43,9 @@ class UserShoppingList: Object {
     
     convenience init(shopThing: String) {
         self.init()
-        
+        self.shopThing = shopThing
+        self.favortie = false
+        self.checkBox = false
     }
+    
 }

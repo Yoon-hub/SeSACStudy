@@ -6,15 +6,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ShoppingViewController: UIViewController {
     
     let shoppingView = ShoppingView()
+    let localRealm = try! Realm()
     
-    var shopList: [String] = []
+    var tasks: Results<UserShoppingList>!
     
     override func loadView() {
         self.view = shoppingView
+        
+        tasks = localRealm.objects(UserShoppingList.self)
+    
         shoppingView.tableView.register(ShoppingTableViewCell.self, forCellReuseIdentifier: ShoppingTableViewCell.reusable)
         shoppingView.tableView.dataSource = self
         shoppingView.plusButton.addTarget(self, action: #selector(plusButtonClicked), for: .touchUpInside)
@@ -24,8 +29,14 @@ class ShoppingViewController: UIViewController {
     
     @objc
     func plusButtonClicked() {
-        shopList.append(shoppingView.textField.text!)
+        let task = UserShoppingList(shopThing: shoppingView.textField.text!)
+        
+        try! localRealm.write {
+            localRealm.add(task) //Create
+        }
+
         shoppingView.tableView.reloadData()
+        
     }
     
 }
@@ -33,13 +44,13 @@ class ShoppingViewController: UIViewController {
 extension ShoppingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shopList.count
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.reusable, for: indexPath) as? ShoppingTableViewCell else { return UITableViewCell() }
         
-        cell.label.text = shopList[indexPath.row]
+        cell.label.text = tasks[indexPath.row].shopThing
         
         return cell
     }
