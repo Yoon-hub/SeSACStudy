@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     
     let mainView = MainView()
     let localRealm = try! Realm()  //Realm 테이블에 데이터를 CRUD할 때, Realm 테이블 경로에 접근
-    var imageURL = ""
+    var imageURL: String!
     override func loadView() {
         self.view = mainView
     }

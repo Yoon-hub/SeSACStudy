@@ -73,12 +73,12 @@ class HomeViewController: UIViewController {
         //present, overCurrentContext, overFullScreen > viewVillAppear X
         //tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
         
-        //Realm 3. Realm 데이터를 정령해 tasks에 저장
-        fetchRealm()
-    }
-    
-    @objc
-    func plusButtonClicked() {
+            //Realm 3. Realm 데이터를 정령해 tasks에 저장
+            fetchRealm()
+        }
+        
+        @objc
+        func plusButtonClicked() {
         let vc = MainViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -97,7 +97,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reusable, for: indexPath) as! HomeTableViewCell
         cell.titleLable.text = tasks[indexPath.row].diaryTitle
-        cell.textLable.text = tasks[indexPath.row].diaryTitle
+        cell.textLable.text = tasks[indexPath.row].diaryContent
         cell.dateLabel.text = "\(tasks[indexPath.row].regDate)"
         cell.image.kf.setImage(with: URL(string: tasks[indexPath.row].photo ?? "https://user-images.githubusercontent.com/92036498/182353809-c271f5a8-5604-40f0-abaa-1f287d80f0dd.png"))
         return cell
