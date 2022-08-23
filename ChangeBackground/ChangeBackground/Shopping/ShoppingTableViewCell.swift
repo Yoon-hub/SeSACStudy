@@ -30,7 +30,7 @@ class ShoppingTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        [starButton, checkButton, label].forEach{ self.addSubview($0) }
+        [starButton, checkButton, label].forEach{ contentView.addSubview($0) }
         setConstatins()
     }
     

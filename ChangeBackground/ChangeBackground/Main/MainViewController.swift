@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         mainView.changeButton.addTarget(self, action: #selector(changeButtonClicked), for: .touchUpInside)
         mainView.sampleButton.addTarget(self, action: #selector(sampleButtonClicked), for: .touchUpInside)
         

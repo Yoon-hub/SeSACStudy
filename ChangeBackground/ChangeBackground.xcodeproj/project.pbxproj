@@ -34,6 +34,7 @@
 		67BBDD0428B380A10096CC4D /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0328B380A10096CC4D /* ShoppingView.swift */; };
 		67BBDD0828B3850A0096CC4D /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */; };
 		67BBDD0D28B38D750096CC4D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0C28B38D750096CC4D /* CustomButton.swift */; };
+		67BBDD1928B455D90096CC4D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		67BBDD0328B380A10096CC4D /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 		67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		67BBDD0C28B38D750096CC4D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				67BBDCFE28B32AD20096CC4D /* HomeViewController.swift */,
+				67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				67BBDD0228B380810096CC4D /* ShoppingViewController.swift in Sources */,
 				67BBDCB728B253D30096CC4D /* SceneDelegate.swift in Sources */,
 				67BBDCCA28B254AD0096CC4D /* BaseView.swift in Sources */,
+				67BBDD1928B455D90096CC4D /* HomeTableViewCell.swift in Sources */,
 				67BBDD0428B380A10096CC4D /* ShoppingView.swift in Sources */,
 				67BBDCDA28B2710B0096CC4D /* ChangeView.swift in Sources */,
 				67BBDCE528B29E9C0096CC4D /* APIKey.swift in Sources */,

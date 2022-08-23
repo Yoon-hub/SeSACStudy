@@ -21,7 +21,7 @@ class CustomButton: UIButton {
     func setConstatins() {
         
         let view = UIButton()
-        let config = UIImage.SymbolConfiguration(pointSize: 50)
+        let config = UIImage.SymbolConfiguration(pointSize: 80)
         self.setImage(UIImage(systemName: "star", withConfiguration: config), for: .normal)
         self.tintColor = .black
         
