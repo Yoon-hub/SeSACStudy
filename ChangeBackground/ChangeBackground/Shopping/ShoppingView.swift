@@ -28,12 +28,12 @@ class ShoppingView: BaseView {
     
     let tableView: UITableView = {
         let view = UITableView()
-        
         return view
     }()
     
     override func configure() {
         [textField, plusButton, tableView].forEach { self.addSubview($0) }
+    
     }
     
     override func setContraints() {
@@ -53,5 +53,7 @@ class ShoppingView: BaseView {
             make.top.equalTo(textField.snp.bottom)
             make.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
+    
+        
     }
 }

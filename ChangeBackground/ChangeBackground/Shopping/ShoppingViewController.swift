@@ -30,6 +30,17 @@ class ShoppingViewController: UIViewController {
         shoppingView.plusButton.addTarget(self, action: #selector(plusButtonClicked), for: .touchUpInside)
         shoppingView.tableView.rowHeight = 50
         
+        let children: [UIAction] = {
+            let nameSort = UIAction(title: "이름순", image: UIImage(systemName: "arrow.up.arrow.down.square"), handler: { _ in
+                self.tasks = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "shopThing", ascending: false) })
+            let heartSort = UIAction(title: "즐겨찾기순", image: UIImage(systemName: "arrow.up.arrow.down.square"), handler: { _ in self.tasks = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "favortie", ascending: false) })
+            return [nameSort, heartSort]
+        }()
+        
+        let menu = UIMenu(title: "정렬", image: nil, identifier: nil, options: .displayInline, children: children)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "arrow.up.arrow.down.square"), primaryAction: nil, menu: menu)
+        navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
     func fetchRealm() {
@@ -79,15 +90,16 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let delete = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+        let deleteButton = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
             try! self.localRealm.write {
                 self.localRealm.delete(self.tasks[indexPath.row])
-                  tableView.reloadData()
+                self.fetchRealm()
               }
         }
-        delete.image = UIImage(systemName: "xmark.diamond.fill")
-        delete.backgroundColor = .red
-        return UISwipeActionsConfiguration(actions: [delete])
+        deleteButton.image = UIImage(systemName: "xmark.diamond.fill")
+        deleteButton.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [deleteButton])
     }
     
     @objc func starButtonClicekd(_ startButton: UIButton) {
