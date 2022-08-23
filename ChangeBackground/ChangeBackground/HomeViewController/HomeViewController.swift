@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     //lazy 호출이 있어야 값을 초기화하는
     lazy var tableView: UITableView = {
         let view = UITableView()
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         
         return view
     }() // 즉시 실행 클로저
@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         tableView.rowHeight = 80
         tableView.delegate = self
         tableView.dataSource = self
@@ -48,6 +49,8 @@ class HomeViewController: UIViewController {
         let sortButton = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
         let filterButton = UIBarButtonItem(title: "필터", style: .plain, target: self, action: #selector(filterButtonClicked))
         navigationItem.leftBarButtonItems = [sortButton, filterButton]
+        
+     
         
     }
     
@@ -96,6 +99,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLable.text = tasks[indexPath.row].diaryTitle
         cell.textLable.text = tasks[indexPath.row].diaryTitle
         cell.dateLabel.text = "\(tasks[indexPath.row].regDate)"
+        cell.image.kf.setImage(with: URL(string: tasks[indexPath.row].photo ?? "https://user-images.githubusercontent.com/92036498/182353809-c271f5a8-5604-40f0-abaa-1f287d80f0dd.png"))
         return cell
     }
     
