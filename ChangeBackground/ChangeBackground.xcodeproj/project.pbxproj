@@ -35,6 +35,7 @@
 		67BBDD0828B3850A0096CC4D /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */; };
 		67BBDD0D28B38D750096CC4D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0C28B38D750096CC4D /* CustomButton.swift */; };
 		67BBDD1928B455D90096CC4D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */; };
+		67BBDD1B28B517900096CC4D /* ShoppingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD1A28B517900096CC4D /* ShoppingDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		67BBDD0C28B38D750096CC4D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		67BBDD1A28B517900096CC4D /* ShoppingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				67BBDD0128B380810096CC4D /* ShoppingViewController.swift */,
 				67BBDD0328B380A10096CC4D /* ShoppingView.swift */,
 				67BBDD0728B3850A0096CC4D /* ShoppingTableViewCell.swift */,
+				67BBDD1A28B517900096CC4D /* ShoppingDetailVC.swift */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				67BBDD0D28B38D750096CC4D /* CustomButton.swift in Sources */,
 				67BBDCDC28B288430096CC4D /* ChageCollectionViewCell.swift in Sources */,
 				67BBDCFF28B32AD20096CC4D /* HomeViewController.swift in Sources */,
+				67BBDD1B28B517900096CC4D /* ShoppingDetailVC.swift in Sources */,
 				67BBDCE128B28BFF0096CC4D /* ReusableProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

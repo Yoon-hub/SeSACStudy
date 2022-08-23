@@ -102,6 +102,16 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [deleteButton])
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ShoppingDetailVC()
+        vc.thingLabel.text = tasks[indexPath.row].shopThing
+        vc.favoriteLabel.text = tasks[indexPath.row].favortie ? "즐겨찾기를 했어요!" : "즐겨찾기를 안했어요!"
+        vc.checkBoxLabel.text = tasks[indexPath.row].checkBox ? "체크를 했어요!" : "체크를 안했어요!"
+        present(vc, animated: true)
+    }
+    
+    
+    
     @objc func starButtonClicekd(_ startButton: UIButton) {
         
         try! localRealm.write {
