@@ -26,6 +26,7 @@ class ShoppingViewController: UIViewController {
     
         shoppingView.tableView.register(ShoppingTableViewCell.self, forCellReuseIdentifier: ShoppingTableViewCell.reusable)
         shoppingView.tableView.dataSource = self
+        shoppingView.tableView.delegate = self
         shoppingView.plusButton.addTarget(self, action: #selector(plusButtonClicked), for: .touchUpInside)
         shoppingView.tableView.rowHeight = 50
         
@@ -37,7 +38,7 @@ class ShoppingViewController: UIViewController {
     
     @objc
     func plusButtonClicked() {
-        let task = UserShoppingList(shopThing: shoppingView.textField.text!)
+        let task = UserShoppingList(shopThing: shoppingView.textField.text!) // 추가
         
         try! localRealm.write {
             localRealm.add(task) //Create
@@ -49,7 +50,7 @@ class ShoppingViewController: UIViewController {
     
 }
 
-extension ShoppingViewController: UITableViewDataSource {
+extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
@@ -74,6 +75,19 @@ extension ShoppingViewController: UITableViewDataSource {
 
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            try! self.localRealm.write {
+                self.localRealm.delete(self.tasks[indexPath.row])
+                  tableView.reloadData()
+              }
+        }
+        delete.image = UIImage(systemName: "xmark.diamond.fill")
+        delete.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [delete])
     }
     
     @objc func starButtonClicekd(_ startButton: UIButton) {
