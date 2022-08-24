@@ -100,10 +100,14 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteButton = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            
+            self.deleteImageToDocument(fileName: "\(self.tasks[indexPath.row].objectID).jpg")
+            
             try! self.localRealm.write {
                 self.localRealm.delete(self.tasks[indexPath.row])
                 self.fetchRealm()
               }
+            
         }
         deleteButton.image = UIImage(systemName: "xmark.diamond.fill")
         deleteButton.backgroundColor = .red
@@ -128,6 +132,20 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         let image = UIImage(contentsOfFile: fileURL.path)
 
         return image
+    }
+    
+    func deleteImageToDocument(fileName: String){
+        
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        //세부 파일 경로. 이미지를 저장할 위치
+        let fileURL = documentDirectory.appendingPathComponent(fileName)
+
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+        } catch let error {
+            print(error)
+        }
+
     }
     
     @objc func starButtonClicekd(_ startButton: UIButton) {

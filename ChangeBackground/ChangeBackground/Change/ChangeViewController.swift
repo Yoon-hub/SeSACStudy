@@ -42,9 +42,13 @@ class ChangeViewController: UIViewController{
         changeView.collectionView.prefetchDataSource = self
         changeView.collectionView.allowsMultipleSelection = false
         changeView.searchBar.delegate = self
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(xmarkButtonClicked))
     }
 
+    @objc func xmarkButtonClicked() {
+        dismiss(animated: true)
+    }
+    
     @objc
     func chageImage() {
         
