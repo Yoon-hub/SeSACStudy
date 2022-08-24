@@ -10,6 +10,10 @@ import UIKit
 import Kingfisher
 import RealmSwift //Realm 1.
 
+protocol SelectImageDelegate {
+    func sendImageData(image: UIImage)
+}
+
 class MainViewController: UIViewController {
     
     let mainView = MainView()
@@ -24,15 +28,18 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         mainView.changeButton.addTarget(self, action: #selector(changeButtonClicked), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
         
         // Get on-disk location of the default Realm
         
         print("Realm is located at:", localRealm.configuration.fileURL!)
     }
+    @objc func closeButtonClicked() {
+        dismiss(animated: true)
+    }
     
     //Realm Create Sample
-    @objc
-    func saveButtonClicked() {
+    @objc func saveButtonClicked() {
 
         let format = DateFormatter()
         format.locale = Locale(identifier: "ko_KR")
@@ -40,24 +47,55 @@ class MainViewController: UIViewController {
         format.dateFormat = "yyyyMMdd"
         let chageDate = format.date(from: mainView.dateTextField.text!)
         
-        let task = UserDiary(diaryTitle: mainView.titleTextField.text!, diaryCount: mainView.titleTextView.text, diaryDate: Date(), regDate: chageDate ?? Date(), photo: imageURL) // => Record 한줄 추가
+        // Realm + 이미지 도큐먼트 저장
+        let task = UserDiary(diaryTitle: mainView.titleTextField.text!, diaryCount: mainView.titleTextView.text, diaryDate: Date(), regDate: chageDate ?? Date(), photo: nil) // => Record 한줄 추가
         
         try! localRealm.write {
             localRealm.add(task) //Create
             print("Realm Succed")
             dismiss(animated: true)
         }
+        
+        if let image = mainView.backgroundImageView.image {
+            saveImageToDocument(fileName: "\(task.objectID).jpg", image: image)
+        }
+        
         navigationController?.popViewController(animated: true)
     }
     
-    @objc
-    func changeButtonClicked() {
+    func saveImageToDocument(fileName: String, image: UIImage) {
+        //Document의 경로를 알려주는 코드
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        //세부 파일 경로. 이미지를 저장할 위치
+        let fileURL = documentDirectory.appendingPathComponent(fileName)
+        //용량을 줄이기 위해 압축하는 것
+        guard let data = image.jpegData(compressionQuality: 0.5) else {return}
+        
+        do {
+            try data.write(to: fileURL)
+        } catch let error {
+            print("file save error", error)
+        }
+        
+    }
+    
+    @objc func changeButtonClicked() {
         let vc = ChangeViewController()
+        vc.delegate = self
         vc.completionHandler = {
             self.imageURL = vc.selected
-            self.mainView.backgroundImageView.kf.setImage(with: URL(string: vc.selected))
+            self.mainView.backgroundImageView.image = vc.selectImage
+            //self.mainView.backgroundImageView.kf.setImage(with: URL(string: vc.selected))
         }
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension MainViewController: SelectImageDelegate {
+    func sendImageData(image: UIImage) {
+        //self.imageURL = vc.selected
+        self.mainView.backgroundImageView.image = image
+        print(image)
+    }
 }

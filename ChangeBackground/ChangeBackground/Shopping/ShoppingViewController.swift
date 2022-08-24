@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Network
 
 class ShoppingViewController: UIViewController {
     
@@ -41,6 +42,13 @@ class ShoppingViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "arrow.up.arrow.down.square"), primaryAction: nil, menu: menu)
         navigationItem.rightBarButtonItem?.tintColor = .black
+        
+        print("Realm is located at:", localRealm.configuration.fileURL!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchRealm()
     }
     
     func fetchRealm() {
@@ -83,7 +91,8 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.checkButton.tag = indexPath.row
         cell.checkButton.addTarget(self, action: #selector(checkButtonClicekd(_:)), for: .touchUpInside)
-
+        
+        
         
         return cell
     }
@@ -107,10 +116,19 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         vc.thingLabel.text = tasks[indexPath.row].shopThing
         vc.favoriteLabel.text = tasks[indexPath.row].favortie ? "즐겨찾기를 했어요!" : "즐겨찾기를 안했어요!"
         vc.checkBoxLabel.text = tasks[indexPath.row].checkBox ? "체크를 했어요!" : "체크를 안했어요!"
+        vc.objectId = tasks[indexPath.row].objectID
+        vc.selectImageView.image = loadImageToDocument(fileName: "\(tasks[indexPath.row].objectID).jpg")
         present(vc, animated: true)
     }
     
-    
+    func loadImageToDocument(fileName: String) -> UIImage? {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
+        //세부 파일 경로. 이미지를 저장할 위치
+        let fileURL = documentDirectory.appendingPathComponent(fileName)
+        let image = UIImage(contentsOfFile: fileURL.path)
+
+        return image
+    }
     
     @objc func starButtonClicekd(_ startButton: UIButton) {
         

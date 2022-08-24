@@ -20,7 +20,7 @@ class MainView: BaseView {
     let changeButton: UIButton = {
        let view = UIButton()
         let config = UIImage.SymbolConfiguration(pointSize: 50)
-        view.setImage(UIImage(systemName: "arrow.clockwise", withConfiguration: config), for: .normal)
+        view.setImage(UIImage(systemName: "photo.artframe", withConfiguration: config), for: .normal)
         view.tintColor = .white
         return view 
     }()

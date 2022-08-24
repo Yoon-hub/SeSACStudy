@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
         let filterButton = UIBarButtonItem(title: "필터", style: .plain, target: self, action: #selector(filterButtonClicked))
         navigationItem.leftBarButtonItems = [sortButton, filterButton]
         
-     
+        print("Realm is located at:", localRealm.configuration.fileURL!)
         
     }
     
@@ -80,12 +80,15 @@ class HomeViewController: UIViewController {
         @objc
         func plusButtonClicked() {
         let vc = MainViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        transition(vc, transitionStyle: .presentNavigation)
+        
     }
     
     func fetchRealm() {
         tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
     }
+    
+
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -99,7 +102,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLable.text = tasks[indexPath.row].diaryTitle
         cell.textLable.text = tasks[indexPath.row].diaryContent
         cell.dateLabel.text = "\(tasks[indexPath.row].regDate)"
-        cell.image.kf.setImage(with: URL(string: tasks[indexPath.row].photo ?? "https://user-images.githubusercontent.com/92036498/182353809-c271f5a8-5604-40f0-abaa-1f287d80f0dd.png"))
+        cell.image.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectID).jpg")
+//        cell.image.kf.setImage(with: URL(string: tasks[indexPath.row].photo ?? "https://user-images.githubusercontent.com/92036498/182353809-c271f5a8-5604-40f0-abaa-1f287d80f0dd.png"))
         return cell
     }
     

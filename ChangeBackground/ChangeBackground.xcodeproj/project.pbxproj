@@ -36,6 +36,8 @@
 		67BBDD0D28B38D750096CC4D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD0C28B38D750096CC4D /* CustomButton.swift */; };
 		67BBDD1928B455D90096CC4D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */; };
 		67BBDD1B28B517900096CC4D /* ShoppingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD1A28B517900096CC4D /* ShoppingDetailVC.swift */; };
+		67BBDD1F28B5A6150096CC4D /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD1E28B5A6150096CC4D /* Transition+Extension.swift */; };
+		67BBDD2128B5D2770096CC4D /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD2028B5D2770096CC4D /* FileManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		67BBDD0C28B38D750096CC4D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		67BBDD1A28B517900096CC4D /* ShoppingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingDetailVC.swift; sourceTree = "<group>"; };
+		67BBDD1E28B5A6150096CC4D /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		67BBDD2028B5D2770096CC4D /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		67BBDCB328B253D30096CC4D /* ChangeBackground */ = {
 			isa = PBXGroup;
 			children = (
+				67BBDD1D28B5A5D10096CC4D /* Extension */,
 				67BBDD0028B380500096CC4D /* Shopping */,
 				67BBDCFD28B32A8C0096CC4D /* HomeViewController */,
 				67BBDCFA28B319CF0096CC4D /* Realm */,
@@ -209,6 +214,15 @@
 			path = Constatins;
 			sourceTree = "<group>";
 		};
+		67BBDD1D28B5A5D10096CC4D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				67BBDD1E28B5A6150096CC4D /* Transition+Extension.swift */,
+				67BBDD2028B5D2770096CC4D /* FileManager+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -301,6 +315,8 @@
 				67BBDD0828B3850A0096CC4D /* ShoppingTableViewCell.swift in Sources */,
 				67BBDCFC28B319EC0096CC4D /* RealmModel.swift in Sources */,
 				67BBDD0228B380810096CC4D /* ShoppingViewController.swift in Sources */,
+				67BBDD1F28B5A6150096CC4D /* Transition+Extension.swift in Sources */,
+				67BBDD2128B5D2770096CC4D /* FileManager+Extension.swift in Sources */,
 				67BBDCB728B253D30096CC4D /* SceneDelegate.swift in Sources */,
 				67BBDCCA28B254AD0096CC4D /* BaseView.swift in Sources */,
 				67BBDD1928B455D90096CC4D /* HomeTableViewCell.swift in Sources */,
