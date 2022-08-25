@@ -93,8 +93,6 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         cell.checkButton.tag = indexPath.row
         cell.checkButton.addTarget(self, action: #selector(checkButtonClicekd(_:)), for: .touchUpInside)
         
-        
-        
         return cell
     }
     
