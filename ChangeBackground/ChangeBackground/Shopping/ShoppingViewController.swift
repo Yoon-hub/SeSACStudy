@@ -14,6 +14,7 @@ class ShoppingViewController: BaseViewController {
     
     let shoppingView = ShoppingView()
     let localRealm = try! Realm()
+    var zipName: String!
     
     var tasks: Results<UserShoppingList>! {
         didSet {
@@ -50,7 +51,7 @@ class ShoppingViewController: BaseViewController {
         let recover = UIBarButtonItem(title: "복구", style: .plain, target: self, action: #selector(recoverButtonClicked))
         
         navigationItem.leftBarButtonItems = [backup, recover]
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        
       
     }
     
@@ -68,9 +69,14 @@ class ShoppingViewController: BaseViewController {
         let urlPaths = [fileURL, imageDirectoryURL]
         
         do {
-            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "SeSACDiary_1")
+            
+            let format = DateFormatter()
+            format.dateFormat = "yyyyMMddhhmmss"
+            zipName = "SeSACDiary_" + format.string(from: Date())
+            
+            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: zipName)
             print("Archive Loction: \(zipFilePath)")
-            showAcitictyViewController()
+            showAcitictyViewController() // AcitictyViewController()를 통해서 백업파일 위치를 정하게 해준다
         } catch {
             showAlert("압축을 실패했습니다.")
         }
@@ -85,7 +91,7 @@ class ShoppingViewController: BaseViewController {
         }
         
         //도큐먼트 폴더안의 realm파일의 경로
-        let backupFileURL = path.appendingPathComponent("SeSACDiary_1.zip")
+        let backupFileURL = path.appendingPathComponent(zipName)  // Document 폴더안에 저장된 zip 파일을 찾아서 어디 따로 저장할지 
         
         let vc = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
         self.present(vc, animated: true)
