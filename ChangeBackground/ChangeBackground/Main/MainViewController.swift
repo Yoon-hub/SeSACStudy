@@ -63,21 +63,6 @@ class MainViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func saveImageToDocument(fileName: String, image: UIImage) {
-        //Document의 경로를 알려주는 코드
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        //세부 파일 경로. 이미지를 저장할 위치
-        let fileURL = documentDirectory.appendingPathComponent(fileName)
-        //용량을 줄이기 위해 압축하는 것
-        guard let data = image.jpegData(compressionQuality: 0.5) else {return}
-        
-        do {
-            try data.write(to: fileURL)
-        } catch let error {
-            print("file save error", error)
-        }
-        
-    }
     
     @objc func changeButtonClicked() {
         let vc = ChangeViewController()

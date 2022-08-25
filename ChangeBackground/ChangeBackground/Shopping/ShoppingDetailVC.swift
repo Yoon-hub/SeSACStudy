@@ -109,16 +109,6 @@ extension ShoppingDetailVC: SelectImageDelegate {
         selectImageView.image = image
     }
     
-    func saveImageToDocument(fileName: String, image: UIImage) {
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        //세부 파일 경로. 이미지를 저장할 위치
-        let fileURL = documentDirectory.appendingPathComponent(fileName)
-        //용량을 줄이기 위해 압축하는 것
-        guard let data = image.jpegData(compressionQuality: 0.5) else {return}
-        
-        try! data.write(to: fileURL)
 
-    }
-    
     
 }

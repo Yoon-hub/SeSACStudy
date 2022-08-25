@@ -24,6 +24,7 @@ class ShoppingViewController: UIViewController {
         self.view = shoppingView
         
         fetchRealm()
+        print(documentDirectoryPath()!)
     
         shoppingView.tableView.register(ShoppingTableViewCell.self, forCellReuseIdentifier: ShoppingTableViewCell.reusable)
         shoppingView.tableView.dataSource = self
@@ -43,7 +44,7 @@ class ShoppingViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "arrow.up.arrow.down.square"), primaryAction: nil, menu: menu)
         navigationItem.rightBarButtonItem?.tintColor = .black
         
-        print("Realm is located at:", localRealm.configuration.fileURL!)
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
