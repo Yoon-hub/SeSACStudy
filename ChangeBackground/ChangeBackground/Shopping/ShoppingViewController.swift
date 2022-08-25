@@ -8,8 +8,9 @@
 import UIKit
 import RealmSwift
 import Network
+import Zip
 
-class ShoppingViewController: UIViewController {
+class ShoppingViewController: BaseViewController {
     
     let shoppingView = ShoppingView()
     let localRealm = try! Realm()
@@ -44,7 +45,54 @@ class ShoppingViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "arrow.up.arrow.down.square"), primaryAction: nil, menu: menu)
         navigationItem.rightBarButtonItem?.tintColor = .black
         
+        
+        let backup = UIBarButtonItem(title: "백업", style: .plain, target: self, action: #selector(backupButtonClicked))
+        let recover = UIBarButtonItem(title: "복구", style: .plain, target: self, action: #selector(recoverButtonClicked))
+        
+        navigationItem.leftBarButtonItems = [backup, recover]
+        navigationItem.leftBarButtonItem?.tintColor = .black
       
+    }
+    
+    @objc func backupButtonClicked() {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        let fileURL = documentDirectory.appendingPathComponent("default.realm")
+        let imageDirectoryURL = documentDirectory.appendingPathComponent("image")
+        
+        guard FileManager.default.fileExists(atPath: fileURL.path), FileManager.default.fileExists(atPath: imageDirectoryURL.path) else {
+            showAlert("파일이 존재 하지 않슴다")
+            return
+        }
+        
+        let urlPaths = [fileURL, imageDirectoryURL]
+        
+        do {
+            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "SeSACDiary_1")
+            print("Archive Loction: \(zipFilePath)")
+            showAcitictyViewController()
+        } catch {
+            showAlert("압축을 실패했습니다.")
+        }
+        
+    }
+    
+    func showAcitictyViewController() {
+        
+        guard let path = documentDirectoryPath() else {
+           showAlert("도큐먼트 위치 오류발생")
+            return
+        }
+        
+        //도큐먼트 폴더안의 realm파일의 경로
+        let backupFileURL = path.appendingPathComponent("SeSACDiary_1.zip")
+        
+        let vc = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
+        self.present(vc, animated: true)
+    }
+    
+    @objc func recoverButtonClicked() {
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,7 +175,9 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     func loadImageToDocument(fileName: String) -> UIImage? {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
         //세부 파일 경로. 이미지를 저장할 위치
-        let fileURL = documentDirectory.appendingPathComponent(fileName)
+        let imageURL = documentDirectory.appendingPathComponent("image")
+        let fileURL = imageURL.appendingPathComponent(fileName)
+        
         let image = UIImage(contentsOfFile: fileURL.path)
 
         return image
@@ -137,7 +187,8 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         //세부 파일 경로. 이미지를 저장할 위치
-        let fileURL = documentDirectory.appendingPathComponent(fileName)
+        let imageURL = documentDirectory.appendingPathComponent("image")
+        let fileURL = imageURL.appendingPathComponent(fileName)
 
         do {
             try FileManager.default.removeItem(at: fileURL)
