@@ -91,14 +91,17 @@ class ShoppingViewController: BaseViewController {
         }
         
         //도큐먼트 폴더안의 realm파일의 경로
-        let backupFileURL = path.appendingPathComponent(zipName)  // Document 폴더안에 저장된 zip 파일을 찾아서 어디 따로 저장할지 
+        let backupFileURL = path.appendingPathComponent(zipName + ".zip")  // Document 폴더안에 저장된 zip 파일을 찾아서 어디 따로 저장할지
         
         let vc = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
         self.present(vc, animated: true)
     }
     
     @objc func recoverButtonClicked() {
-        
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive], asCopy: true)
+         documentPicker.delegate = self
+         documentPicker.allowsMultipleSelection = false
+         self.present(documentPicker, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,6 +127,68 @@ class ShoppingViewController: BaseViewController {
     
 }
 
+extension ShoppingViewController: UIDocumentPickerDelegate {
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print(#function)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        //선택한 파일 위치를 가져오기
+        guard let selectedFileURL = urls.first else {
+            showAlert("선택하신 파일을 찾을 수 없습니다.")
+            return
+        }
+        //도큐먼트 위치 가져오기
+        guard let path = documentDirectoryPath() else {
+           showAlert("도큐먼트 위치 오류발생")
+            return
+        }
+        // 선택한 파일과 도큐먼트 위치를 합치기
+        // 도큐먼트에 선택한 파일이 있냐를 묻는거네
+        let sandboxFileURL = path.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
+    
+            //let fileURL = path.appendingPathComponent("SeSACDiary_1.zip")
+            
+            do{
+                try Zip.unzipFile(sandboxFileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.showAlert("복구가 완료 되었습니다.")
+                })
+            } catch {
+                showAlert("압축 해제에 실패했습니다.")
+            }
+            
+        } else {
+            
+            do {
+                //파일 앱의 zip -> 도큐먼트 폴더에 복사
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+                
+                //let fileURL = path.appendingPathComponent("SeSACDiary_1.zip")
+                
+                try Zip.unzipFile(sandboxFileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.showAlert("복구가 완료 되었습니다.")
+                    // 앱을 새로운 윈도우로 실행 시켜저야한다.
+                })
+                
+            } catch {
+                showAlert("압축 해제에 실패했습니다.")
+            }
+        }
+        
+    }
+    
+}
+
+//MARK: - TableView
 extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
