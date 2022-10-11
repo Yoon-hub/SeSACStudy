@@ -42,6 +42,8 @@
 		67BBDD2B28B6F4D10096CC4D /* BackTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD2A28B6F4D10096CC4D /* BackTableVIewCell.swift */; };
 		67BBDD2D28B6FC650096CC4D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD2C28B6FC650096CC4D /* BaseViewController.swift */; };
 		67BBDD3028B701600096CC4D /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 67BBDD2F28B701600096CC4D /* Zip */; };
+		67BBDD3428B8559A0096CC4D /* UserDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDD3328B8559A0096CC4D /* UserDiaryRepository.swift */; };
+		67BBDD3728B861A90096CC4D /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 67BBDD3628B861A90096CC4D /* FSCalendar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,7 @@
 		67BBDD2828B6F3AC0096CC4D /* BackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
 		67BBDD2A28B6F4D10096CC4D /* BackTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTableVIewCell.swift; sourceTree = "<group>"; };
 		67BBDD2C28B6FC650096CC4D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		67BBDD3328B8559A0096CC4D /* UserDiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiaryRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 				67BBDCF028B2A9900096CC4D /* Kingfisher in Frameworks */,
 				67BBDCF928B3163F0096CC4D /* RealmSwift in Frameworks */,
 				67BBDCED28B29F4C0096CC4D /* Alamofire in Frameworks */,
+				67BBDD3728B861A90096CC4D /* FSCalendar in Frameworks */,
 				67BBDCEA28B29F3E0096CC4D /* SwiftyJSON in Frameworks */,
 				67BBDCD428B26BBC0096CC4D /* SnapKit in Frameworks */,
 				67BBDD3028B701600096CC4D /* Zip in Frameworks */,
@@ -117,7 +121,7 @@
 				67BBDD2728B6F3910096CC4D /* BackUp */,
 				67BBDD1D28B5A5D10096CC4D /* Extension */,
 				67BBDD0028B380500096CC4D /* Shopping */,
-				67BBDCFD28B32A8C0096CC4D /* HomeViewController */,
+				67BBDCFD28B32A8C0096CC4D /* Home */,
 				67BBDCFA28B319CF0096CC4D /* Realm */,
 				67BBDCE328B29E830096CC4D /* Constant */,
 				67BBDCE228B2964F0096CC4D /* Manager */,
@@ -192,17 +196,18 @@
 			isa = PBXGroup;
 			children = (
 				67BBDCFB28B319EC0096CC4D /* RealmModel.swift */,
+				67BBDD3328B8559A0096CC4D /* UserDiaryRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
 		};
-		67BBDCFD28B32A8C0096CC4D /* HomeViewController */ = {
+		67BBDCFD28B32A8C0096CC4D /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				67BBDCFE28B32AD20096CC4D /* HomeViewController.swift */,
 				67BBDD1828B455D90096CC4D /* HomeTableViewCell.swift */,
 			);
-			path = HomeViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		67BBDD0028B380500096CC4D /* Shopping */ = {
@@ -267,6 +272,7 @@
 				67BBDCF628B3163F0096CC4D /* Realm */,
 				67BBDCF828B3163F0096CC4D /* RealmSwift */,
 				67BBDD2F28B701600096CC4D /* Zip */,
+				67BBDD3628B861A90096CC4D /* FSCalendar */,
 			);
 			productName = ChangeBackground;
 			productReference = 67BBDCB128B253D30096CC4D /* ChangeBackground.app */;
@@ -304,6 +310,7 @@
 				67BBDCF128B2AAB50096CC4D /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				67BBDCF528B3163F0096CC4D /* XCRemoteSwiftPackageReference "realm-swift" */,
 				67BBDD2E28B701600096CC4D /* XCRemoteSwiftPackageReference "Zip" */,
+				67BBDD3528B861A90096CC4D /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 67BBDCB228B253D30096CC4D /* Products */;
 			projectDirPath = "";
@@ -354,6 +361,7 @@
 				67BBDCDC28B288430096CC4D /* ChageCollectionViewCell.swift in Sources */,
 				67BBDCFF28B32AD20096CC4D /* HomeViewController.swift in Sources */,
 				67BBDD2928B6F3AC0096CC4D /* BackViewController.swift in Sources */,
+				67BBDD3428B8559A0096CC4D /* UserDiaryRepository.swift in Sources */,
 				67BBDD1B28B517900096CC4D /* ShoppingDetailVC.swift in Sources */,
 				67BBDCE128B28BFF0096CC4D /* ReusableProtocol.swift in Sources */,
 			);
@@ -633,6 +641,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		67BBDD3528B861A90096CC4D /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -675,6 +691,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 67BBDD2E28B701600096CC4D /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		67BBDD3628B861A90096CC4D /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67BBDD3528B861A90096CC4D /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -13,7 +13,7 @@ import RealmSwift //Realm 1.
 protocol SelectImageDelegate {
     func sendImageData(image: UIImage)
 }
-
+//final 더이상 상속을 해주지 않을 class 한테는 final을 붙여준다.
 class MainViewController: UIViewController {
     
     let mainView = MainView()

@@ -55,12 +55,9 @@ class LoginView: BaseView {
         return view
     }()
     
-    let registButton: UIButton = {
-       let view = UIButton()
-        view.backgroundColor = .white
-        view.setTitle("회원가입", for: .normal)
-        view.setTitleColor(UIColor.black, for: .normal)
-        view.layer.cornerRadius = 10
+    let registButton: CustomButton = {
+       let view = CustomButton()
+        
         return view
     }()
     

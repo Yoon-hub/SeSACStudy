@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  SeSAC2Week9
+
+  Created by 최윤제 on 2022/09/06.
+  
+*/
+
+"navigation_title" = "My Diary";
+
+"common_cancel" = "Cancel";
+
+"textfield_placeholder" = "How old are you";
+
+"search_placeholder" = "Search Movie";
+
+"introduce" = "my nickname is %@";
+
+"number_test" = "I am %ㅣㅣd years old";

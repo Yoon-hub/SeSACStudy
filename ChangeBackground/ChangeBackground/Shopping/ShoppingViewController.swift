@@ -126,7 +126,7 @@ class ShoppingViewController: BaseViewController {
     }
     
 }
-
+//MARK: - DocumentPicker
 extension ShoppingViewController: UIDocumentPickerDelegate {
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
@@ -158,6 +158,16 @@ extension ShoppingViewController: UIDocumentPickerDelegate {
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
                     self.showAlert("복구가 완료 되었습니다.")
+                    
+                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+
+                    let vc = ShoppingViewController()
+                    let navi = UINavigationController(rootViewController: vc)
+
+                    sceneDelegate?.window?.rootViewController = navi
+                    sceneDelegate?.window?.makeKeyAndVisible()
+                    
                 })
             } catch {
                 showAlert("압축 해제에 실패했습니다.")
@@ -176,6 +186,15 @@ extension ShoppingViewController: UIDocumentPickerDelegate {
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
                     self.showAlert("복구가 완료 되었습니다.")
+                    
+                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+
+                    let vc = ShoppingViewController()
+                    let navi = UINavigationController(rootViewController: vc)
+
+                    sceneDelegate?.window?.rootViewController = navi
+                    sceneDelegate?.window?.makeKeyAndVisible()
                     // 앱을 새로운 윈도우로 실행 시켜저야한다.
                 })
                 
@@ -270,7 +289,7 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     @objc func starButtonClicekd(_ startButton: UIButton) {
-        
+            
         try! localRealm.write {
             tasks[startButton.tag].favortie = !tasks[startButton.tag].favortie
             self.fetchRealm()

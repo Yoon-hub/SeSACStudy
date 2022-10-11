@@ -11,7 +11,6 @@ class LoginViewController: BaseViewController {
     let loginView = LoginView()
         
     override func loadView() {
-        super.loadView()
         self.view = loginView
     }
     

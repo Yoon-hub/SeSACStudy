@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  SeSAC2Week9
+
+  Created by 최윤제 on 2022/09/06.
+  
+*/
+
+"CFBundleDisplayName" = "JACK Diary";
+
+"NSLocationWhenInUseUsageDescription" = "help me!!";

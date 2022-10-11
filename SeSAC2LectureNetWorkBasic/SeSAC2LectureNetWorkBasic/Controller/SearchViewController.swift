@@ -51,7 +51,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let hud = JGProgressHUD()
     
     let localRealm = try! Realm()
-    
     var tasks: Results<BoxOfficeInfo>!
     
     override func viewDidLoad() {
@@ -68,7 +67,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.register( UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
         
-        tasks = localRealm.objects(BoxOfficeInfo.self).filter("date == '\(today())'")
+        //realm에서 가져올지 API 통신 할지
+        let todayA = today()
+        tasks = localRealm.objects(BoxOfficeInfo.self).filter("date == 'todayA'")
         if tasks.count == 0 {
             print("API 통신함")
             requestBoxOffice(text: today())

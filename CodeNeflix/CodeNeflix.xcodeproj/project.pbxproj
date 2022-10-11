@@ -22,6 +22,7 @@
 		67BBDCA328B083460096CC4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCA228B083460096CC4D /* LoginViewController.swift */; };
 		67BBDCA528B083D10096CC4D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCA428B083D10096CC4D /* LoginView.swift */; };
 		67BBDCA728B0A4110096CC4D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCA628B0A4110096CC4D /* CustomTextField.swift */; };
+		67BBDCCC28B268300096CC4D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCCB28B268300096CC4D /* CustomButton.swift */; };
 		67D869A628AFE34900151787 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67D869A528AFE34900151787 /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		67BBDCA228B083460096CC4D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		67BBDCA428B083D10096CC4D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		67BBDCA628B0A4110096CC4D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		67BBDCCB28B268300096CC4D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				67A5690228AFF5FD00BA01F3 /* BoldCustomLabel.swift */,
 				67A5690428AFFD8F00BA01F3 /* NomalCustomLabel.swift */,
 				67BBDCA628B0A4110096CC4D /* CustomTextField.swift */,
+				67BBDCCB28B268300096CC4D /* CustomButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BBDCCC28B268300096CC4D /* CustomButton.swift in Sources */,
 				67B2555C28AFB6E0002489CC /* BaseViewController.swift in Sources */,
 				67B2556228AFC0A8002489CC /* MainView.swift in Sources */,
 				67A5690528AFFD8F00BA01F3 /* NomalCustomLabel.swift in Sources */,
