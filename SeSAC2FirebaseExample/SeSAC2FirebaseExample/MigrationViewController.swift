@@ -6,24 +6,39 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MigrationViewController: UIViewController {
+    
+    let localRealm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //1. default.realm 파일 fileURL
+        let fileURL = localRealm.configuration.fileURL
+        print("FileURL: \(fileURL)")
+        
+        //2. SchemaVersion 확인
+        do {
+            let version = try schemaVersionAtURL(fileURL!)
+            print("Schema Version: \(version)")
+        } catch {
+            print(error)
+        }
+        
+        //3. Test
+//        for i in 1...100 {
+//            let task = Todo(title: "고래밥의 할일 \(i)", favorite: Int.random(in: 1...5))
+//
+//            try! localRealm.write {
+//                localRealm.add(task)
+//            }
+//
+//        }
+        
+        
+     
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
