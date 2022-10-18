@@ -45,4 +45,29 @@ class LottoViewController: UIViewController {
         }
     }
     
+    func requestLottot(drwNo: Int, comletion: @escaping (Lotto?, APIError?) -> () ) {
+        
+        let url = URL(string: "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drwNo)")!
+        
+        let config = URLSessionConfiguration.default
+        let defaultSession = URLSession(configuration: config, delegate: self, delegateQueue: nil)
+                
+        let Task = defaultSession.dataTask(with: url)
+        Task.resume()
+        
+    }
+    
 }
+
+extension LottoViewController: URLSessionDataDelegate {
+    
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        
+    }
+    
+}
+

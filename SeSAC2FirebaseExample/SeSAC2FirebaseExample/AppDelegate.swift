@@ -17,7 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        aboutRealmMigration()
+        // aboutRealmMigration()
+        
+        let config = Realm.Configuration(schemaVersion: 3) { migration, oldSchemaVersion in
+            if oldSchemaVersion < 1 { // DetailTodo, List 추가
+                
+            }
+            if oldSchemaVersion < 2 { //EmbeddedObject 추가
+                
+            }
+            if oldSchemaVersion < 3 { // DetailTodo에 deadline 추가
+                
+            }
+        }
+        
+        Realm.Configuration.defaultConfiguration = config
         
         //swizzle하기 위해서 appDelegate에서 사용하기 위해서 타입 method 형태로 swizzleMethod를 사용합니다.
         UIViewController.swizzleMethod()

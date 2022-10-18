@@ -52,18 +52,18 @@ class LocalizableViewController: UIViewController, MFMailComposeViewControllerDe
         }
     }
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        switch result {
-        case .cancelled:
-            <#code#>
-        case .saved:
-            <#code#>
-        case .sent:
-            <#code#>
-        case .failed:
-            <#code#>
-        }
-    }
+//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+//        switch result {
+//        case .cancelled:
+//            <#code#>
+//        case .saved:
+//            <#code#>
+//        case .sent:
+//            <#code#>
+//        case .failed:
+//            <#code#>
+//        }
+//    }
 }
 
 extension String {
