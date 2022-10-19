@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Memo {
+struct Memo: Hashable {
     let title: String
     let content: String
     let fixed: Bool
@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     ]
     
     var cellResgistration: UICollectionView.CellRegistration<UICollectionViewListCell, Memo>!
+    
+    var dataSource: UICollectionViewDiffableDataSource<UICollectionViewListCell, Memo>!
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var button: UIButton!
@@ -56,7 +59,7 @@ class ViewController: UIViewController {
             [unowned self] (headerView, elementKind, indexPath) in
 
             headerView.titleLabel.text = "메모"
-        
+
         }
         
         cellResgistration = UICollectionView.CellRegistration { cell, indexPath, itemIdentifier in
@@ -67,31 +70,33 @@ class ViewController: UIViewController {
             cell.contentConfiguration = content
         }
     }
+    
+
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let fixedMemoCount = list.filter { $0.fixed == true }.count
 
         return section == 0 ? fixedMemoCount : list.count - fixedMemoCount
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let fixedMemo = list.filter { $0.fixed == true }
         let nonFixedMemo = list.filter { $0.fixed == false }
-        
+
         let item = indexPath.section == 0 ? fixedMemo[indexPath.item] : nonFixedMemo[indexPath.item]
         let cell = collectionView.dequeueConfiguredReusableCell(using: cellResgistration, for: indexPath, item: item)
-        
+
         return cell
     }
-    
-        
+
+
 }
 
 

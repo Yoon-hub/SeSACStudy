@@ -15,6 +15,7 @@
 		67EEB56028FF0F1600450770 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EEB55E28FF0F1600450770 /* LaunchScreen.storyboard */; };
 		67EEB56828FF225100450770 /* InteractiveHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB56728FF225100450770 /* InteractiveHeader.swift */; };
 		67EEB57028FF232600450770 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67EEB56F28FF232600450770 /* SnapKit */; };
+		67EEB57429007FA300450770 /* DifableDataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB57329007FA300450770 /* DifableDataSourceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		67EEB55F28FF0F1600450770 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67EEB56128FF0F1600450770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67EEB56728FF225100450770 /* InteractiveHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveHeader.swift; sourceTree = "<group>"; };
+		67EEB57329007FA300450770 /* DifableDataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifableDataSourceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,9 @@
 			children = (
 				67EEB55328FF0F1500450770 /* AppDelegate.swift */,
 				67EEB55528FF0F1500450770 /* SceneDelegate.swift */,
-				67EEB55728FF0F1500450770 /* ViewController.swift */,
 				67EEB56728FF225100450770 /* InteractiveHeader.swift */,
+				67EEB55728FF0F1500450770 /* ViewController.swift */,
+				67EEB57329007FA300450770 /* DifableDataSourceViewController.swift */,
 				67EEB55928FF0F1500450770 /* Main.storyboard */,
 				67EEB55C28FF0F1600450770 /* Assets.xcassets */,
 				67EEB55E28FF0F1600450770 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				67EEB55828FF0F1500450770 /* ViewController.swift in Sources */,
 				67EEB56828FF225100450770 /* InteractiveHeader.swift in Sources */,
+				67EEB57429007FA300450770 /* DifableDataSourceViewController.swift in Sources */,
 				67EEB55428FF0F1500450770 /* AppDelegate.swift in Sources */,
 				67EEB55628FF0F1500450770 /* SceneDelegate.swift in Sources */,
 			);
