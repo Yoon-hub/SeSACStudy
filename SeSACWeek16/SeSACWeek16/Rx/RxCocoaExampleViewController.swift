@@ -32,12 +32,80 @@ class RxCocoaExampleViewController: UIViewController {
         setPickerView()
         setSwitch()
         setSign()
+        setOperator()
+    }
+    
+    func setOperator() {
+        
+        Observable.repeatElement("Jack")
+            .take(5)
+            .subscribe { value in
+                print("repeat - \(value)")
+            }
+        
+        let intervalObservable = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance) // 1초마다 방출
+            .subscribe { value in
+                print("interval - \(value)")
+            } onError: { error in
+                print("interval - \(error)")
+            } onCompleted: {
+                print("interval - completed")
+            } onDisposed: {
+                print("interval - disposed")
+            }
+            //.disposed(by: disposeBag)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            intervalObservable.dispose() // 수동으로 정지
+        }
+        
+        
+        let itemsA = [3.3, 4.0, 5.0, 2.0, 3.6, 4.8]
+        let itemsB = [2.3, 2.0, 1.3, 4.6]
+        
+        Observable.just(itemsA)
+            .subscribe { value in
+                print("just - \(value)")
+            } onError: { error in
+                print("just - \(error)")
+            } onCompleted: {
+                print("just - completed")
+            } onDisposed: {
+                print("just - disposed")
+            }
+            .disposed(by: disposeBag)
+
+        
+        Observable.of(itemsA, itemsB) // of 는 여러개를 넣을 수 잇다
+            .subscribe { value in
+                print("of - \(value)")
+            } onError: { error in
+                print("of - \(error)")
+            } onCompleted: {
+                print("of - completed")
+            } onDisposed: {
+                print("of - disposed")
+            }
+            .disposed(by: disposeBag)
+        
+        Observable.from(itemsA)
+            .subscribe { value in
+                print("from - \(value)")
+            } onError: { error in
+                print("from - \(error)")
+            } onCompleted: {
+                print("from - completed")
+            } onDisposed: {
+                print("from - disposed")
+            }
+            .disposed(by: disposeBag)
     }
     
     func setSign() {
         
         //ex. textField1(Observable), textField2(Observable) > 레이블(Observer, bind)
         //반응형 코드 좋구나
+        //bind 는 next 이벤트만 전달 된다 subscribe는 여러개
         Observable.combineLatest(nameTextField.rx.text.orEmpty, emailTextField.rx.text.orEmpty) { value1, value2 in
             return "name은 \(value1)이고, 이메일은 \(value2)입니다"
         }
