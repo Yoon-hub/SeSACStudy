@@ -3,7 +3,7 @@
 //  SeSACWeek16
 //
 //  Created by 최윤제 on 2022/10/24.
-//
+//  bind랑 subscribe 차이점
 
 import UIKit
 
@@ -23,10 +23,23 @@ class RxCocoaExampleViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var signButton: UIButton!
     
-    let disposeBag = DisposeBag()
+    @IBOutlet weak var nickname: UILabel!
+    
+    var nick = Observable.just("jack") // observable 등록 방출만함
+    
+    var disposeBag = DisposeBag() // 메모리를 관리 해주는 객체
+    //Subject << Observable + Observaer 구독 이벤트 둘다 가능한 객체
+    // publish subject
+    // behavior subject
+    // replay subject
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        nick
+            .bind(to: nickname.rx.text) //observer 등록
+            .disposed(by: disposeBag)
+
         
         setTableView()
         setPickerView()
@@ -35,15 +48,31 @@ class RxCocoaExampleViewController: UIViewController {
         setOperator()
     }
     
+    //viewController deinit 되면, 알아서 diposed도 동작한다
+    //또는 DisposeBag() 객체를 새롭게 넣어주거나, nil 할당 => 예외 케이스(rootvc에 interval이 있을 때)
+    deinit {
+        print("RxCocoaExampleViewController")
+    }
+    
     func setOperator() {
         
-        Observable.repeatElement("Jack")
-            .take(5)
-            .subscribe { value in
+        Observable.repeatElement("Jack") // repeatElement를 통해서 무한하게 만들고 take를 사용하여 다시 유한하게 변경
+            .take(5) // Observable Sequence
+            .subscribe { value in // Observer
                 print("repeat - \(value)")
+            } onCompleted: {
+                print("repeat completed")
             }
+            .disposed(by: disposeBag)
         
-        let intervalObservable = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance) // 1초마다 방출
+        //DisposeBag: 리소스 해제 관리 -
+        // 1. 시퀀스 끝날 때 but bind
+        // 2. class deinit 자동 해제 (bind)
+        // 3. dispose 직접 호출
+        // 4. DisposeBag을 새롭게 할당하거나, nil 전달.
+        
+        //dispose() 구독하는 것 마다 별도로 관리
+        let intervalObservable1 = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance) // 1초마다 방출
             .subscribe { value in
                 print("interval - \(value)")
             } onError: { error in
@@ -51,13 +80,27 @@ class RxCocoaExampleViewController: UIViewController {
             } onCompleted: {
                 print("interval - completed")
             } onDisposed: {
-                print("interval - disposed")
+                print("interval1 - disposed")
             }
-            //.disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            intervalObservable.dispose() // 수동으로 정지
-        }
+        let intervalObservable2 = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance) // 1초마다 방출
+            .subscribe { value in
+                print("interval - \(value)")
+            } onError: { error in
+                print("interval - \(error)")
+            } onCompleted: {
+                print("interval - completed")
+            } onDisposed: {
+                print("interval2 - disposed")
+            }
+            .disposed(by: disposeBag)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            self.disposeBag = DisposeBag()  // 새로운 인스턴스 할당, 한번에 리소스 정리할 때 사용
+//            intervalObservable1.dispose() // 수동으로 정지
+//            intervalObservable2.dispose() // 수동으로 정지
+//        }
         
         
         let itemsA = [3.3, 4.0, 5.0, 2.0, 3.6, 4.8]
@@ -98,7 +141,7 @@ class RxCocoaExampleViewController: UIViewController {
             } onDisposed: {
                 print("from - disposed")
             }
-            .disposed(by: disposeBag)
+            .disposed(by: disposeBag) // disposed가 실행되는건 아님
     }
     
     func setSign() {
@@ -127,12 +170,19 @@ class RxCocoaExampleViewController: UIViewController {
             .disposed(by: disposeBag)
         
         signButton.rx.tap
-            .subscribe { _ in
+//            .subscribe { [weak self] _ in
+//                let alert = UIAlertController(title: "로그인성공", message: nil, preferredStyle: .alert)
+//                let ok = UIAlertAction(title: "OK", style: .cancel)
+//                alert.addAction(ok)
+//                self?.present(alert, animated: true)
+//
+//            }
+            .withUnretained(self) // weak self 대신에서 사용 가능합니다.
+            .subscribe { vc, _ in
                 let alert = UIAlertController(title: "로그인성공", message: nil, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .cancel)
                 alert.addAction(ok)
-                self.present(alert, animated: true)
-        
+                vc.present(alert, animated: true)
             }
             .disposed(by: disposeBag)
     }

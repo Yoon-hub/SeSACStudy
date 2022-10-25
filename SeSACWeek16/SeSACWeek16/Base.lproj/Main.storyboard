@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S9X-iR-z4a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XPi-u7-Ben">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMB-Vr-O2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3937" y="-22"/>
+            <point key="canvasLocation" x="3988" y="45"/>
         </scene>
         <!--Rx Cocoa Example View Controller-->
         <scene sceneID="c0M-LP-69O">
@@ -261,11 +261,21 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MN-ge-24A">
+                                <rect key="frame" x="20" y="597" width="350" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZOx-Zc-TY2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h6L-vR-6on"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ag7-39-OfU" firstAttribute="trailing" secondItem="h6L-vR-6on" secondAttribute="trailing" id="0mO-bm-i0b"/>
+                            <constraint firstItem="5MN-ge-24A" firstAttribute="leading" secondItem="h6L-vR-6on" secondAttribute="leading" constant="20" id="6kf-EL-hg3"/>
                             <constraint firstItem="3nc-Li-7fw" firstAttribute="trailing" secondItem="h6L-vR-6on" secondAttribute="trailing" id="9wi-ZZ-KLV"/>
                             <constraint firstItem="3nc-Li-7fw" firstAttribute="leading" secondItem="h6L-vR-6on" secondAttribute="leading" id="A21-Yz-5bk"/>
                             <constraint firstItem="IB5-QI-cwC" firstAttribute="top" secondItem="Dio-R1-mfR" secondAttribute="bottom" constant="20" id="AaZ-U2-yv6"/>
@@ -278,6 +288,7 @@
                             <constraint firstItem="h6L-vR-6on" firstAttribute="bottom" secondItem="3nc-Li-7fw" secondAttribute="bottom" id="a2a-0H-Rbu"/>
                             <constraint firstItem="FYH-IY-xW3" firstAttribute="top" secondItem="OVk-AN-g5s" secondAttribute="bottom" constant="20" id="axA-0j-35s"/>
                             <constraint firstItem="1O9-vx-M94" firstAttribute="top" secondItem="Dio-R1-mfR" secondAttribute="bottom" id="car-FG-Eem"/>
+                            <constraint firstItem="5MN-ge-24A" firstAttribute="top" secondItem="0Pw-6W-SrQ" secondAttribute="bottom" id="cus-4H-9Qp"/>
                             <constraint firstItem="1O9-vx-M94" firstAttribute="leading" secondItem="h6L-vR-6on" secondAttribute="leading" constant="20" id="er3-9u-mNI"/>
                             <constraint firstItem="Ag7-39-OfU" firstAttribute="top" secondItem="h6L-vR-6on" secondAttribute="top" id="euS-4s-FTD"/>
                             <constraint firstItem="h6L-vR-6on" firstAttribute="trailing" secondItem="OVk-AN-g5s" secondAttribute="trailing" constant="20" id="hhO-B5-KgC"/>
@@ -287,13 +298,16 @@
                             <constraint firstItem="Dio-R1-mfR" firstAttribute="leading" secondItem="h6L-vR-6on" secondAttribute="leading" id="o8A-Aw-Iw8"/>
                             <constraint firstItem="0Pw-6W-SrQ" firstAttribute="top" secondItem="FYH-IY-xW3" secondAttribute="bottom" constant="20" id="qHl-Rp-JOJ"/>
                             <constraint firstItem="Dio-R1-mfR" firstAttribute="top" secondItem="Ag7-39-OfU" secondAttribute="bottom" id="rRl-y3-ElR"/>
+                            <constraint firstItem="h6L-vR-6on" firstAttribute="trailing" secondItem="5MN-ge-24A" secondAttribute="trailing" constant="20" id="sSP-KM-iQR"/>
                             <constraint firstItem="IB5-QI-cwC" firstAttribute="leading" secondItem="h6L-vR-6on" secondAttribute="leading" constant="20" id="yLD-Xh-sOD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KWH-7r-cxb"/>
                     <connections>
                         <outlet property="emailTextField" destination="FYH-IY-xW3" id="efy-BT-ncA"/>
                         <outlet property="label" destination="Dio-R1-mfR" id="vwJ-fh-t7G"/>
                         <outlet property="nameTextField" destination="IB5-QI-cwC" id="xO0-7b-deb"/>
+                        <outlet property="nickname" destination="5MN-ge-24A" id="N8P-P0-wr6"/>
                         <outlet property="pickerView" destination="3nc-Li-7fw" id="lDr-Po-3js"/>
                         <outlet property="sampleSwitch" destination="1O9-vx-M94" id="DfM-Vw-631"/>
                         <outlet property="signButton" destination="0Pw-6W-SrQ" id="i2s-F8-xOK"/>
@@ -303,6 +317,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m62-Oi-CyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4900" y="11"/>
+        </scene>
+        <!--Subject View Controller-->
+        <scene sceneID="t7C-TB-2gH">
+            <objects>
+                <viewController id="wjb-Rg-5y1" customClass="SubjectViewController" customModule="SeSACWeek16" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4su-VA-YkE">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5lq-qj-Kvc">
+                                <rect key="frame" x="0.0" y="91" width="390" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YDr-fl-Td7"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AwE-7c-ZFj">
+                                <rect key="frame" x="0.0" y="135" width="390" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nvc-l5-trg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nvc-l5-trg" firstAttribute="trailing" secondItem="AwE-7c-ZFj" secondAttribute="trailing" id="1PI-gS-dss"/>
+                            <constraint firstItem="5lq-qj-Kvc" firstAttribute="trailing" secondItem="nvc-l5-trg" secondAttribute="trailing" id="6KG-YQ-9C2"/>
+                            <constraint firstItem="AwE-7c-ZFj" firstAttribute="top" secondItem="5lq-qj-Kvc" secondAttribute="bottom" id="D6t-Uf-zC7"/>
+                            <constraint firstItem="5lq-qj-Kvc" firstAttribute="top" secondItem="nvc-l5-trg" secondAttribute="top" id="EIu-t2-Rci"/>
+                            <constraint firstItem="nvc-l5-trg" firstAttribute="bottom" secondItem="AwE-7c-ZFj" secondAttribute="bottom" id="TWj-xe-YfH"/>
+                            <constraint firstItem="5lq-qj-Kvc" firstAttribute="leading" secondItem="nvc-l5-trg" secondAttribute="leading" id="fxM-OI-g2Q"/>
+                            <constraint firstItem="AwE-7c-ZFj" firstAttribute="leading" secondItem="nvc-l5-trg" secondAttribute="leading" id="pWb-Na-9sd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JR3-3I-nRa">
+                        <leftBarButtonItems>
+                            <barButtonItem title="리셋" id="7kc-lh-1U7"/>
+                            <barButtonItem title="새연락" id="dNU-VE-pk6"/>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="추가" id="QKN-Ie-cZv"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="QKN-Ie-cZv" id="psz-OG-ZCo"/>
+                        <outlet property="newButton" destination="dNU-VE-pk6" id="cM7-EI-iqC"/>
+                        <outlet property="resetButton" destination="7kc-lh-1U7" id="ebS-nw-OIv"/>
+                        <outlet property="searchBar" destination="5lq-qj-Kvc" id="J7F-ec-40r"/>
+                        <outlet property="tableView" destination="AwE-7c-ZFj" id="xOB-I0-J0n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Njx-t1-noC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6756.9230769230771" y="23.459715639810426"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Aer-9l-2B7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XPi-u7-Ben" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="av0-VZ-ui1">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wjb-Rg-5y1" kind="relationship" relationship="rootViewController" id="h73-Xc-h3h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wU9-Xc-CHo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5827.6923076923076" y="23.459715639810426"/>
         </scene>
     </scenes>
     <resources>

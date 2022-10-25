@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		671C433129077A3600F945B0 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C433029077A3600F945B0 /* SubjectViewController.swift */; };
+		671C4333290788A600F945B0 /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C4332290788A600F945B0 /* SubjectViewModel.swift */; };
 		677F66EC28FE2D8A00B76445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F66EB28FE2D8A00B76445 /* AppDelegate.swift */; };
 		677F66EE28FE2D8A00B76445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F66ED28FE2D8A00B76445 /* SceneDelegate.swift */; };
 		677F66F028FE2D8A00B76445 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F66EF28FE2D8A00B76445 /* SimpleViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		671C433029077A3600F945B0 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		671C4332290788A600F945B0 /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
 		677F66E828FE2D8A00B76445 /* SeSACWeek16.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek16.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		677F66EB28FE2D8A00B76445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		677F66ED28FE2D8A00B76445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				67E57F1F290625BC00DE29C0 /* RxCocoaExampleViewController.swift */,
+				671C433029077A3600F945B0 /* SubjectViewController.swift */,
+				671C4332290788A600F945B0 /* SubjectViewModel.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -229,11 +235,13 @@
 				67EEB5832900EDF200450770 /* APIService.swift in Sources */,
 				677F66EC28FE2D8A00B76445 /* AppDelegate.swift in Sources */,
 				67EEB5792900D13600450770 /* NewsViewController.swift in Sources */,
+				671C433129077A3600F945B0 /* SubjectViewController.swift in Sources */,
 				677F670028FE395A00B76445 /* SimpleCollectionViewController.swift in Sources */,
 				67EEB5872900EF8000450770 /* SearchPhoto.swift in Sources */,
 				677F66EE28FE2D8A00B76445 /* SceneDelegate.swift in Sources */,
 				67EEB57B2900D24800450770 /* NewsViewModel.swift in Sources */,
 				67EEB5852900EE6600450770 /* APIKey.swift in Sources */,
+				671C4333290788A600F945B0 /* SubjectViewModel.swift in Sources */,
 				67EEB5802900ED7800450770 /* DiffableViewModel.swift in Sources */,
 				67E57F20290625BC00DE29C0 /* RxCocoaExampleViewController.swift in Sources */,
 			);
