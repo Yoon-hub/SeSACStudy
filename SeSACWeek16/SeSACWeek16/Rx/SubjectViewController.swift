@@ -31,7 +31,7 @@ class SubjectViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ContactCell")
         
-        viewModel.list
+        viewModel.list // VM -> VC (Output)
             .bind(to: tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element.name): \(element.age)세 (\(element.number))"
             }
@@ -51,14 +51,14 @@ class SubjectViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        newButton.rx.tap
+        newButton.rx.tap  // VC -> VM (Input)
             .withUnretained(self)
             .subscribe { vc, _ in
                 vc.viewModel.newData()
             }
             .disposed(by: disposeBag)
         
-        searchBar.rx.text.orEmpty
+        searchBar.rx.text.orEmpty // VC -> VM (Input)
             .withUnretained(self)
             .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance) // wait 서버 콜수줄이기
             //.distinctUntilChanged() //같은 값을 받지 않는 오퍼레이터
@@ -149,6 +149,7 @@ extension SubjectViewController {
     }
     
     func publishSubject() {  // 초기값이 없는 빈 상태 Observer + Observable
+        
         
         publish.onNext(1)
         publish.onNext(2) // 구독 전에

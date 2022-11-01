@@ -7,14 +7,19 @@
 
 import UIKit
 
-import Kingfisher
+import RxSwift
+import RxCocoa
 
+//Relay -> Next 이벤트만 방출 하는데 Next를 Accept라고 부른다
 class DiffableCollectionViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var disposeBag = DisposeBag()
+    
     var viewModel = DiffableViewModel()
+    
     
    // private var cellRegisteration: UICollectionView.CellRegistration<UICollectionViewListCell, String>!
     
@@ -29,17 +34,35 @@ class DiffableCollectionViewController: UIViewController {
         collectionView.collectionViewLayout = creatLayout()
         configureDataSource()
         collectionView.delegate = self
-        searchBar.delegate = self
+       // searchBar.delegate = self
         
         
-        viewModel.photoList.bind { photo in
-            //Initial
-            var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>()
-            snapshot.appendSections([0])
-            snapshot.appendItems(photo.results)
-            self.dataSource.apply(snapshot)
-            
-        }
+        viewModel.photoList
+            .withUnretained(self)
+            .subscribe(onNext: { vc, photo in
+                //Initial
+                var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>()
+                snapshot.appendSections([0])
+                snapshot.appendItems(photo.results)
+                vc.dataSource.apply(snapshot)
+            }, onError: { error in
+                print("====error: \(error)")
+            }, onCompleted: {
+                print("====: completed")
+            }, onDisposed: {
+                print("====: disposed")
+            })
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.text.orEmpty
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .withUnretained(self)
+            .subscribe { vc, value in
+                print(value)
+                vc.viewModel.requestSearchPhoto(query: value)
+            }
+            .disposed(by: disposeBag)
     }
 }
     
