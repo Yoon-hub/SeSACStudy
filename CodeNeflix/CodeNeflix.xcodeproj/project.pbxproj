@@ -24,7 +24,36 @@
 		67BBDCA728B0A4110096CC4D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCA628B0A4110096CC4D /* CustomTextField.swift */; };
 		67BBDCCC28B268300096CC4D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBDCCB28B268300096CC4D /* CustomButton.swift */; };
 		67D869A628AFE34900151787 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67D869A528AFE34900151787 /* SnapKit */; };
+		67F4EE4F2906E56A002209F4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F4EE4E2906E56A002209F4 /* WidgetKit.framework */; };
+		67F4EE512906E56A002209F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F4EE502906E56A002209F4 /* SwiftUI.framework */; };
+		67F4EE542906E56A002209F4 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F4EE532906E56A002209F4 /* widget.swift */; };
+		67F4EE562906E56B002209F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F4EE552906E56B002209F4 /* Assets.xcassets */; };
+		67F4EE5A2906E56B002209F4 /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 67F4EE4C2906E56A002209F4 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67F4EE582906E56B002209F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67B2553528AFB266002489CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67F4EE4B2906E56A002209F4;
+			remoteInfo = widgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		67F4EE5B2906E56B002209F4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				67F4EE5A2906E56B002209F4 /* widgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		67A5690028AFEC0300BA01F3 /* PreviewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageView.swift; sourceTree = "<group>"; };
@@ -45,6 +74,12 @@
 		67BBDCA428B083D10096CC4D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		67BBDCA628B0A4110096CC4D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		67BBDCCB28B268300096CC4D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		67F4EE4C2906E56A002209F4 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F4EE4E2906E56A002209F4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		67F4EE502906E56A002209F4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		67F4EE532906E56A002209F4 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
+		67F4EE552906E56B002209F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67F4EE572906E56B002209F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +91,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67F4EE492906E56A002209F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F4EE512906E56A002209F4 /* SwiftUI.framework in Frameworks */,
+				67F4EE4F2906E56A002209F4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				67B2553F28AFB266002489CC /* CodeNeflix */,
+				67F4EE522906E56A002209F4 /* widget */,
+				67F4EE4D2906E56A002209F4 /* Frameworks */,
 				67B2553E28AFB266002489CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				67B2553D28AFB266002489CC /* CodeNeflix.app */,
+				67F4EE4C2906E56A002209F4 /* widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +178,25 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		67F4EE4D2906E56A002209F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67F4EE4E2906E56A002209F4 /* WidgetKit.framework */,
+				67F4EE502906E56A002209F4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67F4EE522906E56A002209F4 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				67F4EE532906E56A002209F4 /* widget.swift */,
+				67F4EE552906E56B002209F4 /* Assets.xcassets */,
+				67F4EE572906E56B002209F4 /* Info.plist */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,10 +207,12 @@
 				67B2553928AFB266002489CC /* Sources */,
 				67B2553A28AFB266002489CC /* Frameworks */,
 				67B2553B28AFB266002489CC /* Resources */,
+				67F4EE5B2906E56B002209F4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				67F4EE592906E56B002209F4 /* PBXTargetDependency */,
 			);
 			name = CodeNeflix;
 			packageProductDependencies = (
@@ -154,6 +222,23 @@
 			productReference = 67B2553D28AFB266002489CC /* CodeNeflix.app */;
 			productType = "com.apple.product-type.application";
 		};
+		67F4EE4B2906E56A002209F4 /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67F4EE5E2906E56B002209F4 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				67F4EE482906E56A002209F4 /* Sources */,
+				67F4EE492906E56A002209F4 /* Frameworks */,
+				67F4EE4A2906E56A002209F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = 67F4EE4C2906E56A002209F4 /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,11 +246,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					67B2553C28AFB266002489CC = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					67F4EE4B2906E56A002209F4 = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
@@ -186,6 +274,7 @@
 			projectRoot = "";
 			targets = (
 				67B2553C28AFB266002489CC /* CodeNeflix */,
+				67F4EE4B2906E56A002209F4 /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +287,14 @@
 				67B2554D28AFB268002489CC /* LaunchScreen.storyboard in Resources */,
 				67B2554A28AFB268002489CC /* Assets.xcassets in Resources */,
 				67B2554828AFB266002489CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F4EE4A2906E56A002209F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F4EE562906E56B002209F4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +321,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67F4EE482906E56A002209F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F4EE542906E56A002209F4 /* widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67F4EE592906E56B002209F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67F4EE4B2906E56A002209F4 /* widgetExtension */;
+			targetProxy = 67F4EE582906E56B002209F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		67B2554628AFB266002489CC /* Main.storyboard */ = {
@@ -363,6 +476,7 @@
 		67B2555228AFB268002489CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -391,6 +505,7 @@
 		67B2555328AFB268002489CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -416,6 +531,64 @@
 			};
 			name = Release;
 		};
+		67F4EE5C2906E56B002209F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XXJ2YB9QP5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.CodeNeflix.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67F4EE5D2906E56B002209F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XXJ2YB9QP5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.CodeNeflix.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -433,6 +606,15 @@
 			buildConfigurations = (
 				67B2555228AFB268002489CC /* Debug */,
 				67B2555328AFB268002489CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67F4EE5E2906E56B002209F4 /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F4EE5C2906E56B002209F4 /* Debug */,
+				67F4EE5D2906E56B002209F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

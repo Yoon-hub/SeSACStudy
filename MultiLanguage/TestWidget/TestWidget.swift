@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 
+
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
@@ -41,6 +42,8 @@ struct SimpleEntry: TimelineEntry {
 struct TestWidgetEntryView : View {
     var entry: Provider.Entry
     
+    var list = RealmManager.shared.getAllMemo()
+    
     var body: some View {
         VStack {
             Text("오늘     ")
@@ -49,8 +52,9 @@ struct TestWidgetEntryView : View {
                 .frame(width: 100, height: 12, alignment: .center)
             Divider()
             VStack {
-                ForEach(1..<4) { _ in
-                    CellView(text: "흠 이건 나도 진짜", imageName: "square")
+                let count = list.count >= 3 ? 3 : list.count
+                ForEach(0..<count) { i in
+                    CellView(text: list[i].content, imageName: "square")
                         .frame(height: 27, alignment: .leading)
                     //Spacer()
                     

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CookRecipeProject
+//  SeSAC2Week18
 //
-//  Created by 최윤제 on 2022/10/20.
+//  Created by 최윤제 on 2022/11/02.
 //
 
 import UIKit

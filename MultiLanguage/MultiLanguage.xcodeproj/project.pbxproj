@@ -14,11 +14,19 @@
 		67894C4A28EE03DA00D13ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67894C4928EE03DA00D13ABE /* Assets.xcassets */; };
 		67894C4D28EE03DA00D13ABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67894C4B28EE03DA00D13ABE /* LaunchScreen.storyboard */; };
 		67894C5628EE06EC00D13ABE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67894C5828EE06EC00D13ABE /* Localizable.strings */; };
+		67E57EFE2905B6F300DE29C0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 67E57EFD2905B6F300DE29C0 /* Realm */; };
+		67E57F002905B6F300DE29C0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 67E57EFF2905B6F300DE29C0 /* RealmSwift */; };
+		67E57F022905B7CA00DE29C0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 67E57F012905B7CA00DE29C0 /* Realm */; };
+		67E57F042905B7CD00DE29C0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 67E57F032905B7CD00DE29C0 /* RealmSwift */; };
+		67E57F062905B8B000DE29C0 /* Realmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E57F052905B8B000DE29C0 /* Realmanager.swift */; };
+		67E57F072905B94600DE29C0 /* Realmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E57F052905B8B000DE29C0 /* Realmanager.swift */; };
+		67E57F082905B95100DE29C0 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB6342905AA0D00450770 /* Memo.swift */; };
 		67E91B1728F050C3007597F5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E91B1628F050C3007597F5 /* WidgetKit.framework */; };
 		67E91B1928F050C3007597F5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E91B1828F050C3007597F5 /* SwiftUI.framework */; };
 		67E91B1C28F050C3007597F5 /* TestWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E91B1B28F050C3007597F5 /* TestWidget.swift */; };
 		67E91B1E28F050C3007597F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E91B1D28F050C3007597F5 /* Assets.xcassets */; };
 		67E91B2228F050C3007597F5 /* TestWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 67E91B1428F050C3007597F5 /* TestWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		67EEB6352905AA0D00450770 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB6342905AA0D00450770 /* Memo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +65,16 @@
 		67894C5728EE06EC00D13ABE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67894C5928EE082F00D13ABE /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		67894C5A28EE089800D13ABE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		67E57F052905B8B000DE29C0 /* Realmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realmanager.swift; sourceTree = "<group>"; };
 		67E91B1428F050C3007597F5 /* TestWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TestWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E91B1628F050C3007597F5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		67E91B1828F050C3007597F5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		67E91B1B28F050C3007597F5 /* TestWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWidget.swift; sourceTree = "<group>"; };
 		67E91B1D28F050C3007597F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67E91B1F28F050C3007597F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67EEB6342905AA0D00450770 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		67EEB6362905AB9300450770 /* MultiLanguage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultiLanguage.entitlements; sourceTree = "<group>"; };
+		67EEB6372905AB9C00450770 /* TestWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E57F002905B6F300DE29C0 /* RealmSwift in Frameworks */,
+				67E57EFE2905B6F300DE29C0 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E57F042905B7CD00DE29C0 /* RealmSwift in Frameworks */,
+				67E57F022905B7CA00DE29C0 /* Realm in Frameworks */,
 				67E91B1928F050C3007597F5 /* SwiftUI.framework in Frameworks */,
 				67E91B1728F050C3007597F5 /* WidgetKit.framework in Frameworks */,
 			);
@@ -88,6 +104,7 @@
 		67894C3428EE03D900D13ABE = {
 			isa = PBXGroup;
 			children = (
+				67EEB6372905AB9C00450770 /* TestWidgetExtension.entitlements */,
 				67894C3F28EE03D900D13ABE /* MultiLanguage */,
 				67E91B1A28F050C3007597F5 /* TestWidget */,
 				67E91B1528F050C3007597F5 /* Frameworks */,
@@ -107,9 +124,11 @@
 		67894C3F28EE03D900D13ABE /* MultiLanguage */ = {
 			isa = PBXGroup;
 			children = (
+				67EEB6362905AB9300450770 /* MultiLanguage.entitlements */,
 				67894C4028EE03D900D13ABE /* AppDelegate.swift */,
 				67894C4228EE03D900D13ABE /* SceneDelegate.swift */,
 				67894C4428EE03D900D13ABE /* ViewController.swift */,
+				67EEB6342905AA0D00450770 /* Memo.swift */,
 				67894C5828EE06EC00D13ABE /* Localizable.strings */,
 				67894C4628EE03D900D13ABE /* Main.storyboard */,
 				67894C4928EE03DA00D13ABE /* Assets.xcassets */,
@@ -132,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				67E91B1B28F050C3007597F5 /* TestWidget.swift */,
+				67E57F052905B8B000DE29C0 /* Realmanager.swift */,
 				67E91B1D28F050C3007597F5 /* Assets.xcassets */,
 				67E91B1F28F050C3007597F5 /* Info.plist */,
 			);
@@ -156,6 +176,10 @@
 				67E91B2128F050C3007597F5 /* PBXTargetDependency */,
 			);
 			name = MultiLanguage;
+			packageProductDependencies = (
+				67E57EFD2905B6F300DE29C0 /* Realm */,
+				67E57EFF2905B6F300DE29C0 /* RealmSwift */,
+			);
 			productName = MultiLanguage;
 			productReference = 67894C3D28EE03D900D13ABE /* MultiLanguage.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +197,10 @@
 			dependencies = (
 			);
 			name = TestWidgetExtension;
+			packageProductDependencies = (
+				67E57F012905B7CA00DE29C0 /* Realm */,
+				67E57F032905B7CD00DE29C0 /* RealmSwift */,
+			);
 			productName = TestWidgetExtension;
 			productReference = 67E91B1428F050C3007597F5 /* TestWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -206,6 +234,9 @@
 				ja,
 			);
 			mainGroup = 67894C3428EE03D900D13ABE;
+			packageReferences = (
+				67E57EFC2905B6F300DE29C0 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 67894C3E28EE03D900D13ABE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,7 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				67894C4528EE03D900D13ABE /* ViewController.swift in Sources */,
+				67EEB6352905AA0D00450770 /* Memo.swift in Sources */,
 				67894C4128EE03D900D13ABE /* AppDelegate.swift in Sources */,
+				67E57F062905B8B000DE29C0 /* Realmanager.swift in Sources */,
 				67894C4328EE03D900D13ABE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,7 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E57F082905B95100DE29C0 /* Memo.swift in Sources */,
 				67E91B1C28F050C3007597F5 /* TestWidget.swift in Sources */,
+				67E57F072905B94600DE29C0 /* Realmanager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +454,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MultiLanguage/MultiLanguage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XXJ2YB9QP5;
@@ -448,6 +484,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MultiLanguage/MultiLanguage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XXJ2YB9QP5;
@@ -476,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TestWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XXJ2YB9QP5;
@@ -503,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TestWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XXJ2YB9QP5;
@@ -556,6 +595,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		67E57EFC2905B6F300DE29C0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.30.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67E57EFD2905B6F300DE29C0 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67E57EFC2905B6F300DE29C0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		67E57EFF2905B6F300DE29C0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67E57EFC2905B6F300DE29C0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		67E57F012905B7CA00DE29C0 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67E57EFC2905B6F300DE29C0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		67E57F032905B7CD00DE29C0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67E57EFC2905B6F300DE29C0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 67894C3528EE03D900D13ABE /* Project object */;
 }

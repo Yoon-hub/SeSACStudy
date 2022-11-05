@@ -31,37 +31,40 @@ class SubjectViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ContactCell")
         
-        viewModel.list // VM -> VC (Output)
-            .bind(to: tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
+        let input = SubjectViewModel.Input(addTap: addButton.rx.tap, resetTap: resetButton.rx.tap, newTap: newButton.rx.tap, searchText: searchBar.rx.text)
+        let output = viewModel.transform(input: input)
+        
+
+        output.list
+            .drive(tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element.name): \(element.age)세 (\(element.number))"
             }
             .disposed(by: disposeBag)
         
-        addButton.rx.tap
+        
+        output.addTap
             .withUnretained(self)
             .subscribe { vc, _ in
                 vc.viewModel.fetchData()
             }
             .disposed(by: disposeBag)
         
-        resetButton.rx.tap
+        output.resetTap
             .withUnretained(self)
             .subscribe { vc, _ in
                 vc.viewModel.resetData()
             }
             .disposed(by: disposeBag)
         
-        newButton.rx.tap  // VC -> VM (Input)
+        output.newTap  // VC -> VM (Input)
             .withUnretained(self)
             .subscribe { vc, _ in
                 vc.viewModel.newData()
             }
             .disposed(by: disposeBag)
         
-        searchBar.rx.text.orEmpty // VC -> VM (Input)
+        output.searchText
             .withUnretained(self)
-            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance) // wait 서버 콜수줄이기
-            //.distinctUntilChanged() //같은 값을 받지 않는 오퍼레이터
             .subscribe { vc, value in
                 print("===\(value)")
                 vc.viewModel.filterData(query: value)

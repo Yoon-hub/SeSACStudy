@@ -30,6 +30,28 @@ class MigrationViewController: UIViewController {
               print(error)
           }
         
+        let current = Date()
+        
+        let todayMonth = Calendar.current.dateComponents([.month, .year, .day], from: current)
+        
+                                                
+        
+        var dateComponents = DateComponents(hour: 00)
+        dateComponents.year = todayMonth.year
+        dateComponents.month = todayMonth.month
+        dateComponents.day = todayMonth.day! + 1
+        dateComponents.hour = dateComponents.hour! + 24
+        
+        
+        let date = Calendar.current.date(from: dateComponents)
+        print("++++++++++++++++++++++++\(date)++++++++++++++++")
+        print("++++++++++++++++++++++++\(current)++++++++++++++++")
+        
+        let format = DateFormatter()
+        format.locale = Locale(identifier: "ko_KR")
+        format.timeZone = TimeZone(abbreviation: "KST")
+        format.dateFormat = "yyyy년 MM월 dd일 EEEE a hh:mm"
+        print(format.string(from: date!))
     }
     
     func inputSampleData() {

@@ -66,6 +66,12 @@ class ValidationViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        output.tap
+            .bind { _ in
+                print("Show Alert")
+            }
+            .disposed(by: disposeBag)
+        
         stepButton.rx.tap  // Input
             .bind { _ in
                 print("Show Alert")
