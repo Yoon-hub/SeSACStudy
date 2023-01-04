@@ -100,7 +100,7 @@ extension MapViewController {
             //사용자가 위치를 허용해둔 상태라면, srtartUpdatingLocation을 통해 didUpdateLocations 메서드가 실행
             locationManager.startUpdatingLocation()
         default: print("DEFAULT")
-            
+             
         }
     }
     
@@ -133,7 +133,7 @@ extension MapViewController: CLLocationManagerDelegate {
         }
         
         //위치 업데이트 멈춰!
-        locationManager.startUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
     
     //Location6. 사용자의 위치를 못 가지고 온 경우

@@ -17,6 +17,7 @@ class SubscribeViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var thottleButton: UIButton!
     
     var dispoasBag = DisposeBag()
     
@@ -25,6 +26,13 @@ class SubscribeViewController: UIViewController {
         
         testRxAlamofire()
         textRxDataSource()
+        
+        thottleButton.rx.tap
+            .throttle(.seconds(5), latest: false ,scheduler: MainScheduler.instance)
+            .bind {
+                print("안녕하세요?")
+            }
+            .disposed(by: dispoasBag)
         
         Observable.of(1,2,3,4,5,6,7,8,9,10)
             .skip(3) // 3개를 스킵

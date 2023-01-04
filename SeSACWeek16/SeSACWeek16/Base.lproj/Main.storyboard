@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Omk-8v-USk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="93S-9d-Wye">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -35,6 +35,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-qZ-OXP">
+                                <rect key="frame" x="143" y="108" width="74" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="thottle"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tbh-hK-rXk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,11 +49,12 @@
                         <outlet property="button" destination="bgS-fa-p9g" id="spv-Cj-Td7"/>
                         <outlet property="label" destination="o9o-OG-Xq4" id="CR9-rA-9S0"/>
                         <outlet property="tableView" destination="VYp-Ud-u2j" id="wFX-X5-2G3"/>
+                        <outlet property="thottleButton" destination="rcP-qZ-OXP" id="3kb-gG-0mb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6z-ci-r9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387.69230769230768" y="40.521327014218009"/>
+            <point key="canvasLocation" x="214" y="-10"/>
         </scene>
         <!--Simple Table View Controller-->
         <scene sceneID="zrA-Mm-aij">
